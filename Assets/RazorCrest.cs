@@ -8,13 +8,12 @@ public class RazorCrest : MonoBehaviour
 {
     public VRTK_ControllerEvents controller;
     public VRTK_ControllerEvents.ButtonAlias actionButton = VRTK_ControllerEvents.ButtonAlias.ButtonTwoPress;
-    public VRTK_ControllerEvents.ButtonAlias actionButton2 = VRTK_ControllerEvents.ButtonAlias.ButtonTwoPress;
-    public VRTK_ControllerEvents.ButtonAlias actionButton3 = VRTK_ControllerEvents.ButtonAlias.ButtonTwoPress;
     public int lift, turn, forward;
     public float liftForce, turnForce, forwardForce;
     Rigidbody body;
     VRTK_BodyPhysics bodyPhysics;
     public Transform drivingSeatT;
+    public bool isDriving;
 
     public VRTK_ArtificialRotator controls_Lift, controls_Speed, controls_Turn;
 
@@ -28,8 +27,6 @@ public class RazorCrest : MonoBehaviour
 	private void OnEnable()
     {
         controller.SubscribeToButtonAliasEvent(actionButton, true, Controller_JetPackButtonPressed);
-        controller.SubscribeToButtonAliasEvent(actionButton2, true, Controller_JetPackButtonPressed2);
-        controller.SubscribeToButtonAliasEvent(actionButton3, true, Controller_JetPackButtonPressed3);
 		controls_Lift.ValueChanged += Controls_Lift_ValueChanged;
         controls_Speed.ValueChanged += Controls_Speed_ValueChanged;
         controls_Turn.ValueChanged += Controls_Turn_ValueChanged;
@@ -40,8 +37,6 @@ public class RazorCrest : MonoBehaviour
 	private void OnDisable()
     {
         controller.UnsubscribeToButtonAliasEvent(actionButton, true, Controller_JetPackButtonPressed);
-        controller.SubscribeToButtonAliasEvent(actionButton2, true, Controller_JetPackButtonPressed2);
-        controller.SubscribeToButtonAliasEvent(actionButton3, true, Controller_JetPackButtonPressed3);
         controls_Lift.ValueChanged -= Controls_Lift_ValueChanged;
         controls_Speed.ValueChanged -= Controls_Speed_ValueChanged;
         controls_Turn.ValueChanged += Controls_Turn_ValueChanged;
@@ -49,15 +44,7 @@ public class RazorCrest : MonoBehaviour
 
     private void Controller_JetPackButtonPressed(object sender, ControllerInteractionEventArgs e)
     {
-        ToggleLift();
-    }
-    private void Controller_JetPackButtonPressed2(object sender, ControllerInteractionEventArgs e)
-    {
-        ToggleTurn();
-    }
-    private void Controller_JetPackButtonPressed3(object sender, ControllerInteractionEventArgs e)
-    {
-        ToggleForward();
+        EnterDrivingSeat();
     }
 
     private void Controls_Lift_ValueChanged(object sender, VRTK.Controllables.ControllableEventArgs e)
@@ -75,14 +62,17 @@ public class RazorCrest : MonoBehaviour
 
     private void FixedUpdate()
 	{
-        // Lift
-        body.AddForce(Vector3.up * liftForce * lift);
+        if (isDriving)
+        {
+            // Lift
+            body.AddForce(Vector3.up * liftForce * lift);
 
-        // Turn
-        body.AddTorque(Vector3.up * turnForce * turn);
+            // Turn
+            body.AddTorque(Vector3.up * turnForce * turn);
 
-        // Forward
-        body.AddForce(transform.forward * forwardForce * forward);
+            // Forward
+            body.AddForce(transform.forward * forwardForce * forward);
+        }
 
     }
 
@@ -128,6 +118,7 @@ public class RazorCrest : MonoBehaviour
         bodyPhysics.enableBodyCollisions = false;
         VRTK_HeadsetFade.instance.Unfade(1);
         FindObjectOfType<VRTK_SlideObjectControlAction>().gameObject.SetActive(false);
+        isDriving = true;
 
     }
 

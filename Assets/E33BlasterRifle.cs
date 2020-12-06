@@ -39,6 +39,7 @@ public class E33BlasterRifle : MonoBehaviour
 
     void FireGun()
 	{
+        fireSource.pitch = Random.Range(0.85f, 1.15f);
         fireSource.Play();
         GameObject bullet = Instantiate(blasterBulletPrefab, bulletsT, false);
         bullet.transform.position = bulletPointT.position;

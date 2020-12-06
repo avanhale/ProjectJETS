@@ -12,7 +12,7 @@ public class JetPack : MonoBehaviour
     public AudioClip jetStart, jetMid, jetEnd;
     AudioSource source;
 
-
+    public bool isShipJets;
     public float jetForce;
 
     public bool isJetting;
@@ -25,11 +25,14 @@ public class JetPack : MonoBehaviour
 
 	private void OnEnable()
 	{
+        if (isShipJets) return;
         controller.SubscribeToButtonAliasEvent(actionButton, true, Controller_JetPackButtonPressed);
         controller.SubscribeToButtonAliasEvent(actionButton, false, Controller_JetPackButtonUnPressed);
     }
     private void OnDisable()
     {
+        if (isShipJets) return;
+
         controller.UnsubscribeToButtonAliasEvent(actionButton, true, Controller_JetPackButtonPressed);
         controller.UnsubscribeToButtonAliasEvent(actionButton, false, Controller_JetPackButtonUnPressed);
     }
@@ -45,6 +48,8 @@ public class JetPack : MonoBehaviour
 
     void Update()
     {
+        if (isShipJets) return;
+
         if (isJetting)
 		{
             body.ApplyBodyVelocity(Vector3.up * jetForce, true);
@@ -52,13 +57,13 @@ public class JetPack : MonoBehaviour
         }
     }
 
-    void ToggleJets()
+    public void ToggleJets()
 	{
         if (isJetting) EndJets();
         else StartJets();
 	}
 
-    void StartJets()
+    public void StartJets()
 	{
         isJetting = true;
         if (startJetsRoutine != null) StopCoroutine(startJetsRoutine);
@@ -80,7 +85,7 @@ public class JetPack : MonoBehaviour
 		}
 	}
 
-    void EndJets()
+    public void EndJets()
 	{
         isJetting = false;
         source.clip = jetEnd;
