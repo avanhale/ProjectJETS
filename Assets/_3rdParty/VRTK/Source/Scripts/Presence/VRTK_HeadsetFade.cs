@@ -34,6 +34,7 @@ namespace VRTK
     [AddComponentMenu("VRTK/Scripts/Presence/VRTK_HeadsetFade")]
     public class VRTK_HeadsetFade : MonoBehaviour
     {
+        public static VRTK_HeadsetFade instance;
         /// <summary>
         /// Emitted when the user's headset begins to fade to a given colour.
         /// </summary>
@@ -54,6 +55,7 @@ namespace VRTK
         protected Transform headset;
         protected bool isTransitioning = false;
         protected bool isFaded = false;
+
 
         public virtual void OnHeadsetFadeStart(HeadsetFadeEventArgs e)
         {
@@ -136,6 +138,7 @@ namespace VRTK
 
         protected virtual void Awake()
         {
+            instance = this;
             VRTK_SDKManager.AttemptAddBehaviourToToggleOnLoadedSetupChange(this);
         }
 

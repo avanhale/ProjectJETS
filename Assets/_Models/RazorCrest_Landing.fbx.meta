@@ -12,6 +12,33 @@ ModelImporter:
   - first:
       74: 2343192336083757024
     second: RazorCrestRIG|Starting
+  - first:
+      74: 3812737559842894666
+    second: RazorCrestRIG|RazorCrestRIG|RazorCrestRIG|Flying|RazorCrestRIG|Flying
+  - first:
+      74: 9170214008717582264
+    second: RazorCrestRIG|RazorCrestRIG|RazorCrestRIG|Landing|RazorCrestRIG|Landing
+  - first:
+      74: 7805337454985566546
+    second: RazorCrestRIG|RazorCrestRIG|RazorCrestRIG|Starting|RazorCrestRIG|Starting
+  - first:
+      74: 7511492235308061074
+    second: RazorCrestRIG|RazorCrestRIG|RazorCrestRIG|RazorCrestRIG|RazorCrestRIG|Flying|
+  - first:
+      74: 6608213559804697209
+    second: RazorCrestRIG|RazorCrestRIG|RazorCrestRIG|RazorCrestRIG|RazorCrestRIG|Landing
+  - first:
+      74: 7334137558369736383
+    second: RazorCrestRIG|RazorCrestRIG|RazorCrestRIG|RazorCrestRIG|RazorCrestRIG|Startin
+  - first:
+      74: -5677661653312358586
+    second: RazorCrestRIG|RazorCrestRIG|RazorCrestRIG|RazorCrestRIG|RazorCrestRIG|Raz
+  - first:
+      74: -7831391368735476759
+    second: RazorCrestRIG|RazorCrestRIG|RazorCrestRIG|RazorCrestRIG|RazorCrestRIG|Raz.001
+  - first:
+      74: 220873617567785861
+    second: RazorCrestRIG|RazorCrestRIG|RazorCrestRIG|RazorCrestRIG|RazorCrestRIG|RazorCr
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -62,7 +89,7 @@ ModelImporter:
     skinWeightsMode: 0
     maxBonesPerVertex: 4
     minBoneWeight: 0.001
-    meshOptimizationFlags: -1
+    meshOptimizationFlags: 0
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
@@ -70,8 +97,8 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
-    normalSmoothAngle: 60
-    normalImportMode: 0
+    normalSmoothAngle: 39
+    normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 4
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
