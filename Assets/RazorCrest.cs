@@ -22,6 +22,7 @@ public class RazorCrest : MonoBehaviour
         body = GetComponent<Rigidbody>();
         bodyPhysics = FindObjectOfType<VRTK_BodyPhysics>();
         body.maxAngularVelocity = 100f;
+        Landing();
     }
 
 	private void OnEnable()
@@ -103,6 +104,22 @@ public class RazorCrest : MonoBehaviour
         else forward = 1;
     }
 
+    [ContextMenu("Driving")]
+    public void Driving()
+	{
+        body.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+        body.useGravity = false;
+        isDriving = true;
+    }
+
+    [ContextMenu("Landing")]
+    public void Landing()
+	{
+        body.constraints = RigidbodyConstraints.FreezeRotation;
+        body.useGravity = true;
+        isDriving = false;
+    }
+
     [ContextMenu("Enter")]
     public void EnterDrivingSeat()
 	{
@@ -118,7 +135,7 @@ public class RazorCrest : MonoBehaviour
         bodyPhysics.enableBodyCollisions = false;
         VRTK_HeadsetFade.instance.Unfade(1);
         FindObjectOfType<VRTK_SlideObjectControlAction>().gameObject.SetActive(false);
-        isDriving = true;
+        Driving();
 
     }
 

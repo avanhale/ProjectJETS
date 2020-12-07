@@ -4803,7 +4803,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eb76d1e1502234428a42fbc76fa91b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 50
+  speed: 75
   bulletLength: 0.5
   damage: 0
   bulletGO: {fileID: 4603299498335000602}

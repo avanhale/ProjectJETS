@@ -44,6 +44,8 @@ namespace VRTK
         [Tooltip("An optional Body Physics script to check for potential collisions in the moving direction. If any potential collision is found then the move will not take place. This can help reduce collision tunnelling.")]
         public VRTK_BodyPhysics bodyPhysics;
 
+        public bool isMoving;
+
         protected float currentSpeed = 0f;
 
         protected override void Process(GameObject controlledGameObject, Transform directionDevice, Vector3 axisDirection, float axis, float deadzone, bool currentlyFalling, bool modifierActive)
@@ -65,10 +67,12 @@ namespace VRTK
             {
                 speed = (maximumSpeed * inputValue);
                 speed = (modifierActive ? (speed * speedMultiplier) : speed);
+                isMoving = true;
             }
             else
             {
                 speed = Decelerate(speed, currentlyFalling);
+                isMoving = false;
             }
 
             return speed;

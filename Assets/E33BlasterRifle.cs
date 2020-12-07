@@ -5,12 +5,13 @@ using VRTK;
 
 public class E33BlasterRifle : MonoBehaviour
 {
-    public VRTK_ControllerEvents controller;
+    public VRTK_ControllerEvents controllerR, controllerL;
     VRTK_InteractableObject interactableObject;
     AudioSource fireSource;
     public GameObject blasterBulletPrefab;
     Transform bulletsT;
     public Transform bulletPointT;
+    public VRTK_SnapDropZone dropZone;
 
 	private void Awake()
 	{
@@ -21,11 +22,19 @@ public class E33BlasterRifle : MonoBehaviour
 
 	private void OnEnable()
 	{
-        controller.SubscribeToButtonAliasEvent(VRTK_ControllerEvents.ButtonAlias.TriggerPress, true, Controller_FireButtonPressed);
-	}
-    private void OnDisable()
+        controllerR.SubscribeToButtonAliasEvent(VRTK_ControllerEvents.ButtonAlias.TriggerPress, true, Controller_FireButtonPressed);
+        controllerL.SubscribeToButtonAliasEvent(VRTK_ControllerEvents.ButtonAlias.TriggerPress, true, Controller_FireButtonPressed);
+        interactableObject.InteractableObjectUngrabbed += InteractableObject_InteractableObjectUngrabbed;
+
+    }
+
+	
+
+	private void OnDisable()
     {
-        controller.UnsubscribeToButtonAliasEvent(VRTK_ControllerEvents.ButtonAlias.TriggerPress, true, Controller_FireButtonPressed);
+        controllerR.UnsubscribeToButtonAliasEvent(VRTK_ControllerEvents.ButtonAlias.TriggerPress, true, Controller_FireButtonPressed);
+        controllerL.SubscribeToButtonAliasEvent(VRTK_ControllerEvents.ButtonAlias.TriggerPress, true, Controller_FireButtonPressed);
+        interactableObject.InteractableObjectUngrabbed -= InteractableObject_InteractableObjectUngrabbed;
     }
     private void Controller_FireButtonPressed(object sender, ControllerInteractionEventArgs e)
 	{
@@ -35,7 +44,10 @@ public class E33BlasterRifle : MonoBehaviour
         }
 	}
 
-
+    private void InteractableObject_InteractableObjectUngrabbed(object sender, InteractableObjectEventArgs e)
+    {
+        StartCoroutine(ReleasedRoutine());
+    }
 
     void FireGun()
 	{
@@ -47,6 +59,12 @@ public class E33BlasterRifle : MonoBehaviour
     }
 
 
+    IEnumerator ReleasedRoutine()
+	{
+        yield return new WaitForEndOfFrame();
+        dropZone.ForceSnap(gameObject);
+
+    }
 
 
 

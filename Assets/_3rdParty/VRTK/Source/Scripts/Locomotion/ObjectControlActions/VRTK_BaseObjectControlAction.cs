@@ -66,7 +66,7 @@ namespace VRTK
                         break;
                 }
             }
-            internalBodyPhysics = (internalBodyPhysics == null ? VRTK_SharedMethods.FindEvenInactiveComponent<VRTK_BodyPhysics>(true) : internalBodyPhysics);
+            internalBodyPhysics = FindObjectOfType<VRTK_BodyPhysics>();// (internalBodyPhysics == null ? VRTK_SharedMethods.FindEvenInactiveComponent<VRTK_BodyPhysics>(true) : internalBodyPhysics);
         }
 
         protected virtual void OnDisable()
