@@ -3,7 +3,52 @@ guid: 317b3b5df3a44894d9b9353adf3faed0
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Armadura
+    second: {fileID: 2100000, guid: 239e0b269e8d15a4992ecdfbcec3b4a4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Casco_Blin
+    second: {fileID: 2100000, guid: 923a57f2661a0964cb47386c229f308a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Guantes
+    second: {fileID: 2100000, guid: f7d8a5a34b26c22459efd4e8c41f5843, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ropa
+    second: {fileID: 2100000, guid: 23ae3aeba0120db4eab01f91d2427a79, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _boba_Pose_prueba_Boba_Guantes
+    second: {fileID: 2100000, guid: f7d8a5a34b26c22459efd4e8c41f5843, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blaster
+    second: {fileID: 2100000, guid: 1e54f07381e3f4242a50e4454c613edb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: jetpack
+    second: {fileID: 2100000, guid: 33ad3f4061cc0ca4ebcfd1e3ff0b81fb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: trenza_cafe
+    second: {fileID: 2100000, guid: a81b345c9fd48314a88c55295820bed6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: trenza_clara
+    second: {fileID: 2100000, guid: 1928e5754fb9d9043a5b06e51cc9fbbb, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
