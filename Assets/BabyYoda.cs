@@ -9,10 +9,13 @@ public class BabyYoda : MonoBehaviour
     public Transform playerHeadT;
     VRTK_InteractableObject interactableObject;
     public int clampX, clampY;
+
+    Animator animator;
+
 	private void Awake()
 	{
         interactableObject = GetComponent<VRTK_InteractableObject>();
-
+        animator = GetComponentInChildren<Animator>();
     }
 	// Start is called before the first frame update
 	void Start()
@@ -28,7 +31,6 @@ public class BabyYoda : MonoBehaviour
 
 	private void LateUpdate()
 	{
-        
         if (interactableObject.IsGrabbed())
 		{
             headT.forward = playerHeadT.position - headT.position;
@@ -40,6 +42,8 @@ public class BabyYoda : MonoBehaviour
             angles.z = 0;
             headT.localEulerAngles = angles;
         }
+
+        animator.SetBool("Floating", interactableObject.IsGrabbed());
 
     }
 }
