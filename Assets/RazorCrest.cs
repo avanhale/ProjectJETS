@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using VRTK;
 using VRTK.Controllables.ArtificialBased;
+using BezierSolution;
 
 public class RazorCrest : MonoBehaviour
 {
@@ -15,14 +16,19 @@ public class RazorCrest : MonoBehaviour
     public Transform drivingSeatT;
     public bool isDriving;
 
-    public VRTK_ArtificialRotator controls_Lift, controls_Speed, controls_Turn;
+    BezierWalkerWithSpeed walker;
 
+    public VRTK_ArtificialRotator controls_Lift, controls_Speed, controls_Turn;
+    Animator anim;
 	private void Awake()
 	{
         body = GetComponent<Rigidbody>();
         bodyPhysics = FindObjectOfType<VRTK_BodyPhysics>();
         body.maxAngularVelocity = 100f;
-        Landing();
+        anim = GetComponentInChildren<Animator>();
+        walker = GetComponent<BezierWalkerWithSpeed>();
+        //Landing();
+        Driving();
     }
 
 	private void OnEnable()
@@ -40,7 +46,7 @@ public class RazorCrest : MonoBehaviour
         controller.UnsubscribeToButtonAliasEvent(actionButton, true, Controller_JetPackButtonPressed);
         controls_Lift.ValueChanged -= Controls_Lift_ValueChanged;
         controls_Speed.ValueChanged -= Controls_Speed_ValueChanged;
-        controls_Turn.ValueChanged += Controls_Turn_ValueChanged;
+        controls_Turn.ValueChanged -= Controls_Turn_ValueChanged;
     }
 
     private void Controller_JetPackButtonPressed(object sender, ControllerInteractionEventArgs e)
@@ -77,9 +83,15 @@ public class RazorCrest : MonoBehaviour
 
     }
 
+    public bool firstLanding;
     private void LateUpdate()
 	{
         transform.localEulerAngles = new Vector3(0, transform.localEulerAngles.y, 0);
+        if (!firstLanding && isDriving && walker.NormalizedT > 0.8f)
+		{
+            firstLanding = true;
+            Landing();
+        }
     }
 
 
@@ -110,6 +122,7 @@ public class RazorCrest : MonoBehaviour
         body.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
         body.useGravity = false;
         isDriving = true;
+        anim.SetBool("Flying", true);
     }
 
     [ContextMenu("Landing")]
@@ -118,6 +131,8 @@ public class RazorCrest : MonoBehaviour
         body.constraints = RigidbodyConstraints.FreezeRotation;
         body.useGravity = true;
         isDriving = false;
+        anim.SetBool("Flying", false);
+        forward = turn = lift = 0;
     }
 
     [ContextMenu("Enter")]

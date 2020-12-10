@@ -17,7 +17,6 @@ public class ShipThrusters : MonoBehaviour
 
     void Update()
     {
-        if (!rc.isDriving) return;
 
         if (rc.forward != lastForward)
 		{
