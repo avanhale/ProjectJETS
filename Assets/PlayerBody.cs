@@ -54,7 +54,8 @@ public class PlayerBody : MonoBehaviour
 
     void UpdatePosition()
     {
-        Vector3 pos = headT.position + -Vector3.ProjectOnPlane(headT.forward, Vector3.up).normalized * backOffset;
+        Vector3 lerper = Vector3.Slerp(Vector3.ProjectOnPlane(headT.forward, Vector3.up).normalized, Vector3.ProjectOnPlane(transform.rotation * Vector3.forward, Vector3.up), 0.33f);
+        Vector3 pos = headT.position + -lerper.normalized * backOffset;
         pos += Vector3.down * veticalOffset;
         transform.position = Vector3.Lerp(transform.position, pos, positionSpeed);
     }

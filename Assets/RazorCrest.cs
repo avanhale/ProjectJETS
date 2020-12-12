@@ -38,9 +38,6 @@ public class RazorCrest : MonoBehaviour
         controls_Speed.ValueChanged += Controls_Speed_ValueChanged;
         controls_Turn.ValueChanged += Controls_Turn_ValueChanged;
     }
-
-	
-
 	private void OnDisable()
     {
         controller.UnsubscribeToButtonAliasEvent(actionButton, true, Controller_JetPackButtonPressed);
@@ -92,6 +89,7 @@ public class RazorCrest : MonoBehaviour
             firstLanding = true;
             Landing();
         }
+
     }
 
 

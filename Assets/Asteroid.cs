@@ -8,6 +8,7 @@ public class Asteroid : MonoBehaviour
 	private void Awake()
 	{
         field = GetComponentInParent<AsteroidField>();
+        GetComponent<Rigidbody>().maxAngularVelocity = 100f;
 	}
 
     private void OnCollisionEnter(Collision collision)
@@ -15,7 +16,7 @@ public class Asteroid : MonoBehaviour
         RazorCrest rc = collision.collider.GetComponentInParent<RazorCrest>();
         if (rc)
         {
-            field.AsteroidHit(collision.contacts[0].point);
+            AudioManager_JT.instance.AsteroidMetalHit(collision.contacts[0].point);
         }
     }
 
