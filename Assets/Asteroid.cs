@@ -17,6 +17,8 @@ public class Asteroid : MonoBehaviour
         if (rc)
         {
             AudioManager_JT.instance.AsteroidMetalHit(collision.contacts[0].point);
+            VRTKCustom_Haptics.instance.ThrowStrong(true);
+            VRTKCustom_Haptics.instance.ThrowStrong(false);
         }
     }
 
