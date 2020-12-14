@@ -11,6 +11,9 @@ public class PlayerBody : MonoBehaviour
     public float rotationSpeed, positionSpeed;
     Animator animator;
     VRTK_SlideObjectControlAction[] sliders;
+    public LayerMask airMask;
+    public bool isMidAir;
+
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -31,13 +34,15 @@ public class PlayerBody : MonoBehaviour
     {
         Ray ray = new Ray(headT.position, Vector3.down);
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, 2))
+        if (Physics.Raycast(ray, out hit, 3, airMask, QueryTriggerInteraction.Ignore))
         {
             animator.SetBool("MidAir", false);
+            isMidAir = false;
         }
         else
         {
             animator.SetBool("MidAir", true);
+            isMidAir = true;
         }
     }
 

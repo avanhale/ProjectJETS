@@ -24,8 +24,8 @@ public class AsteroidShooter : MonoBehaviour
 		foreach (var body in bodies)
 		{
 			yield return new WaitForSeconds(delay);
-			delay *= 0.98f;
-			body.AddForce(directorT.forward * Random.Range(15000, 25000));
+			delay *= 0.97f;
+			body.AddForce(directorT.forward * Random.Range(50, 110), ForceMode.VelocityChange);
 		}
 	}
 

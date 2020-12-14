@@ -17,23 +17,33 @@ public class BlasterBullet : MonoBehaviour
         hitPXGO.SetActive(false);
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+	private void Start()
+	{
+        ToBlaster(true);
     }
 
-    // Update is called once per frame
-    void Update()
+    bool hasMovedU, hasMovedS;
+	void Update()
     {
         if (isMoving)
         {
+            if (!hasMovedU)
+			{
+                ToBlaster(false);
+			}
             transform.position += transform.forward * speed * Time.deltaTime;
-
         }
     }
 
-	private void FixedUpdate()
+    void ToBlaster(bool isS)
+	{
+        E33BlasterRifle blaster = FindObjectOfType<E33BlasterRifle>();
+        transform.position = blaster.bulletPointT.position;
+        transform.rotation = blaster.bulletPointT.rotation;
+        if (isS) hasMovedS = true; else hasMovedU = true;
+    }
+
+    private void FixedUpdate()
 	{
         if (!isMoving) return;
 

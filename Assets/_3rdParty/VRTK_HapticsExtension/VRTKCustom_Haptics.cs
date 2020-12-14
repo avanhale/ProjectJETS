@@ -9,11 +9,11 @@ public class VRTKCustom_Haptics : VRTK.CustomScripts.VRTKCustom_HapticFeedback
     public float strongThreshold;
     public float mediumThreshold;
     public Pulse throwPulseStrong;
-    public Pulse throwPulseMedium;
-    public Pulse throwPulseWeak;
+    public Pulse blasterShot;
+    public Pulse grabBlaster;
 
-    [Header("OutOfBounds Pulse")]
-    public Pulse outOfBoundsPulse;
+    [Header("HyperSpace Pulse")]
+    public Pulse hyperSpacePulse;
 
     [Header("InBounds Pulse")]
     public Pulse inBoundsPulse;
@@ -24,7 +24,7 @@ public class VRTKCustom_Haptics : VRTK.CustomScripts.VRTKCustom_HapticFeedback
     [System.Serializable]
     public struct Pulse
     {
-        [Range(0,1)]
+        [Range(0,5)]
         public float intensity, pulseDuration, intervalDuration, totalDuration;
         public bool isContinuous;
 
@@ -39,9 +39,22 @@ public class VRTKCustom_Haptics : VRTK.CustomScripts.VRTKCustom_HapticFeedback
         instance = this;
     }
 
-    public void OutOfBounnds()
+    [ContextMenu("HyperSpace")]
+    public void HyperSpace()
     {
-        HapticPulse(outOfBoundsPulse, false);
+        StartCoroutine(HyperPulser());
+    }
+
+    IEnumerator HyperPulser()
+	{
+        HapticPulse(hyperSpacePulse, true);
+        HapticPulse(hyperSpacePulse, false);
+        yield return new WaitForSeconds(2);
+        HapticPulse(hyperSpacePulse, true);
+        HapticPulse(hyperSpacePulse, false);
+        yield return new WaitForSeconds(2);
+        HapticPulse(hyperSpacePulse, true);
+        HapticPulse(hyperSpacePulse, false);
     }
     public void InBounds()
     {
@@ -53,13 +66,15 @@ public class VRTKCustom_Haptics : VRTK.CustomScripts.VRTKCustom_HapticFeedback
         HapticPulse(throwPulseStrong, isRightHand);
     }
 
-    public void ThrowMedium(bool isRightHand)
+    public void BlasterShot()
     {
-        HapticPulse(throwPulseMedium, isRightHand);
+        HapticPulse(blasterShot, false);
     }
-    public void ThrowWeak(bool isRightHand)
+
+    [ContextMenu("GrabBlaster")]
+    public void GrabBlaster()
     {
-        HapticPulse(throwPulseWeak, isRightHand);
+        HapticPulse(grabBlaster, false);
     }
 
     public void MPTurn()

@@ -25,7 +25,7 @@ public class HyperSpaceButton : MonoBehaviour
 		collider.enabled = true;
 		outline.enabled = true;
 		isHyperSpaceReady = true;
-		mesh.material.DOColor(mesh.material.color * 0.8f, 0.5f).SetLoops(-1);
+		mesh.material.DOColor(mesh.material.color * 0.5f, 1f).SetLoops(-1, LoopType.Yoyo);
 	}
 
 
@@ -36,6 +36,7 @@ public class HyperSpaceButton : MonoBehaviour
 			if (isHyperSpaceReady)
 			{
 				GameManager.instance.HyperSpaceHit();
+				GetComponent<AudioSource>().Play();
 				isHyperSpaceReady = false;
 			}
 		}

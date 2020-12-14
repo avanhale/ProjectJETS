@@ -46,11 +46,13 @@ namespace VRTK
 
         public bool isMoving;
 
-        protected float currentSpeed = 0f;
+        public float currentSpeed = 0f;
+
+        public PlayerBody body;
 
         protected override void Process(GameObject controlledGameObject, Transform directionDevice, Vector3 axisDirection, float axis, float deadzone, bool currentlyFalling, bool modifierActive)
         {
-            currentSpeed = CalculateSpeed(axis, currentlyFalling, modifierActive);
+            currentSpeed = CalculateSpeed(axis, currentlyFalling, body.isMidAir);
             Move(controlledGameObject, directionDevice, axisDirection);
         }
 

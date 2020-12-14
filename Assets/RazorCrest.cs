@@ -144,7 +144,7 @@ public class RazorCrest : MonoBehaviour
         VRTK_HeadsetFade.instance.Fade(Color.black, 1);
         yield return new WaitForSeconds(1);
         bodyPhysics.transform.SetParent(drivingSeatT, false);
-        bodyPhysics.transform.localPosition = bodyPhysics.transform.localEulerAngles = Vector3.zero;
+        PlaySpaceRelativity.TransformCameraTo(drivingSeatT);
         bodyPhysics.enableBodyCollisions = false;
         VRTK_HeadsetFade.instance.Unfade(1);
         FindObjectOfType<VRTK_SlideObjectControlAction>().gameObject.SetActive(false);

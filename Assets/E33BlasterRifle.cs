@@ -12,6 +12,9 @@ public class E33BlasterRifle : MonoBehaviour
     Transform bulletsT;
     public Transform bulletPointT;
     public VRTK_SnapDropZone dropZone;
+    public Collider coll;
+    public Transform bodyT;
+    public Vector3 offset;
 
 	private void Awake()
 	{
@@ -49,13 +52,21 @@ public class E33BlasterRifle : MonoBehaviour
         StartCoroutine(ReleasedRoutine());
     }
 
-    void FireGun()
+
+	private void Update()
+	{
+        coll.transform.position = bodyT.TransformPoint(offset);
+    }
+
+	void FireGun()
 	{
         fireSource.pitch = Random.Range(0.85f, 1.15f);
         fireSource.Play();
         GameObject bullet = Instantiate(blasterBulletPrefab, bulletsT, false);
         bullet.transform.position = bulletPointT.position;
         bullet.transform.rotation = bulletPointT.rotation;
+
+        VRTKCustom_Haptics.instance.BlasterShot();
     }
 
 
