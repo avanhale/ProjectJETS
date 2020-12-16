@@ -7,6 +7,8 @@ using UnityEngine.PostProcessing;
 public class GameManager : MonoBehaviour
 {
 	public static GameManager instance;
+	[Range(0, 1)]
+	public float timeScale;
 	public PostProcessingProfile profile;
 	private void Awake()
 	{
@@ -14,7 +16,11 @@ public class GameManager : MonoBehaviour
 		profile.grain.enabled = false;
 	}
 
+	private void Update()
+	{
+		Time.timeScale = timeScale;
 
+	}
 
 
 	[ContextMenu("HyperSpace")]

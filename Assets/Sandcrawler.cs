@@ -14,7 +14,7 @@ public class Sandcrawler : MonoBehaviour
 	private void Awake()
 	{
         anim = GetComponentInChildren<Animator>();
-        Close();
+        //Close();
 
     }
 
@@ -35,16 +35,23 @@ public class Sandcrawler : MonoBehaviour
         tracksT.localPosition = pos;
     }
 
+    public void StartMoving()
+	{
+        isMoving = true;
+	}
 
-
+    [ContextMenu("OPen")]
     public void Open()
 	{
+        isMoving = false;
         anim.SetBool("isClosed", false);
     }
 
+    [ContextMenu("Close")]
     public void Close()
 	{
         anim.SetBool("isClosed", true);
+        Invoke("StartMoving", 5);
     }
 
 

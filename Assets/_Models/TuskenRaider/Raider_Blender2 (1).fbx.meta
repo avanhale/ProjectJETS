@@ -1,0 +1,2167 @@
+fileFormatVersion: 2
+guid: ca066428137ec4a47b1b46fcd8f59665
+ModelImporter:
+  serializedVersion: 19301
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Group1662Mat.002
+    second: {fileID: 2100000, guid: dcbd0c8d43135774f8772cfba8477737, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Group2Mat.002
+    second: {fileID: 2100000, guid: dcbd0c8d43135774f8772cfba8477737, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: m_Eye.002
+    second: {fileID: 2100000, guid: dcbd0c8d43135774f8772cfba8477737, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: m_chest.002
+    second: {fileID: 2100000, guid: a0b4154bfd82b1e489d46c69807d9389, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: m_hands.002
+    second: {fileID: 2100000, guid: 663436cc6f19d7b4788ce94db08e7c10, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: m_headscarf.002
+    second: {fileID: 2100000, guid: 774cf962d00d8b142a39c9395445d74c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: m_mouth.002
+    second: {fileID: 2100000, guid: 405a9c827763434469a8188df0351146, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: m_mouthleather.002
+    second: {fileID: 2100000, guid: 079319801be3fc3469bac83ec3d6d83f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: m_neckscarf.002
+    second: {fileID: 2100000, guid: 7198bc14620fbb8488627060dc50eeb2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: m_packs.002
+    second: {fileID: 2100000, guid: 1156b45df76dc274c8ff0ad2927d7c4a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: m_respbits.002
+    second: {fileID: 2100000, guid: b04ec0730f1201d4786b42daa131ead3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: m_respbits_mid.002
+    second: {fileID: 2100000, guid: 6e7ad6f1f912d9f4692dcb42124e71e1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: m_robe.002
+    second: {fileID: 2100000, guid: 4f28d6ab77d5e824dbba7e7888232862, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: m_sash.002
+    second: {fileID: 2100000, guid: 53d83740c956ee743a203d729ef58448, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: m_wristCloths.002
+    second: {fileID: 2100000, guid: b37ca6e9dd05ee640af968804d8d8b24, type: 2}
+  materials:
+    materialImportMode: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1.2
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human:
+    - boneName: mixamorig:Hips
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:LeftUpLeg
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:RightUpLeg
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:LeftLeg
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:RightLeg
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:LeftFoot
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:RightFoot
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:Spine
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:Spine1
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:Neck
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:Head
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:LeftShoulder
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:RightShoulder
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:LeftArm
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:RightArm
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:LeftForeArm
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:RightForeArm
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:LeftHand
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:RightHand
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:LeftToeBase
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:RightToeBase
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:LeftHandIndex1
+      humanName: Left Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:LeftHandIndex2
+      humanName: Left Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:LeftHandIndex3
+      humanName: Left Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:RightHandIndex1
+      humanName: Right Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:RightHandIndex2
+      humanName: Right Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:RightHandIndex3
+      humanName: Right Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:Spine2
+      humanName: UpperChest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: Raider_Blender2 (1)(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Raider
+      parentName: Raider_Blender2 (1)(Clone)
+      position: {x: 0.0023999999, y: 0.018000001, z: 0}
+      rotation: {x: 0.000000081460335, y: 0, z: -0, w: 1}
+      scale: {x: 100, y: 100, z: 100}
+    - name: respbits
+      parentName: Raider
+      position: {x: -0.000016558597, y: 0.00000022630982, z: 0.000017689457}
+      rotation: {x: -0.026040629, y: -0.60820335, z: -0.03393684, w: 0.7926278}
+      scale: {x: 0.0010000003, y: 0.0010000004, z: 0.0010000002}
+    - name: ZBrush_defualt_group
+      parentName: respbits
+      position: {x: -0.015018538, y: -0.18020274, z: -0.012296713}
+      rotation: {x: -0.0000000018626451, y: 5.8207605e-11, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: SubTool_12_5094199
+      parentName: Raider
+      position: {x: -0.000016558597, y: 0.00000022630982, z: 0.000017689457}
+      rotation: {x: -0.026040629, y: -0.60820335, z: -0.03393684, w: 0.7926278}
+      scale: {x: 0.0010000003, y: 0.0010000004, z: 0.0010000002}
+    - name: ZBrush_defualt_group_1
+      parentName: SubTool_12_5094199
+      position: {x: -0.015018538, y: -0.18020274, z: -0.012296713}
+      rotation: {x: -0.0000000018626451, y: 5.8207605e-11, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: SubTool_13_8880050
+      parentName: Raider
+      position: {x: -0.000016558597, y: 0.00000022630982, z: 0.000017689457}
+      rotation: {x: -0.026040629, y: -0.60820335, z: -0.03393684, w: 0.7926278}
+      scale: {x: 0.0010000003, y: 0.0010000004, z: 0.0010000002}
+    - name: Group1
+      parentName: SubTool_13_8880050
+      position: {x: -0.015018538, y: -0.18020274, z: -0.012296713}
+      rotation: {x: -0.0000000018626451, y: 5.8207605e-11, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: Group2
+      parentName: SubTool_13_8880050
+      position: {x: -0.015018538, y: -0.18020274, z: -0.012296713}
+      rotation: {x: -0.0000000018626451, y: 5.8207605e-11, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: Group4
+      parentName: SubTool_13_8880050
+      position: {x: -0.015018538, y: -0.18020274, z: -0.012296713}
+      rotation: {x: -0.0000000018626451, y: 5.8207605e-11, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: Group5
+      parentName: SubTool_13_8880050
+      position: {x: -0.015018538, y: -0.18020274, z: -0.012296713}
+      rotation: {x: -0.0000000018626451, y: 5.8207605e-11, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: Group6
+      parentName: SubTool_13_8880050
+      position: {x: -0.015018538, y: -0.18020274, z: -0.012296713}
+      rotation: {x: -0.0000000018626451, y: 5.8207605e-11, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: Group7
+      parentName: SubTool_13_8880050
+      position: {x: -0.015018538, y: -0.18020274, z: -0.012296713}
+      rotation: {x: -0.0000000018626451, y: 5.8207605e-11, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: Group8
+      parentName: SubTool_13_8880050
+      position: {x: -0.015018538, y: -0.18020274, z: -0.012296713}
+      rotation: {x: -0.0000000018626451, y: 5.8207605e-11, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: Group9
+      parentName: SubTool_13_8880050
+      position: {x: -0.015018538, y: -0.18020274, z: -0.012296713}
+      rotation: {x: -0.0000000018626451, y: 5.8207605e-11, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: Group10
+      parentName: SubTool_13_8880050
+      position: {x: -0.015018538, y: -0.18020274, z: -0.012296713}
+      rotation: {x: -0.0000000018626451, y: 5.8207605e-11, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: SubTool_14_11003746
+      parentName: Raider
+      position: {x: -0.000016558597, y: 0.00000022630982, z: 0.000017689457}
+      rotation: {x: -0.026040629, y: -0.60820335, z: -0.03393684, w: 0.7926278}
+      scale: {x: 0.0010000003, y: 0.0010000004, z: 0.0010000002}
+    - name: Group1_1
+      parentName: SubTool_14_11003746
+      position: {x: -0.015018538, y: -0.18020274, z: -0.012296713}
+      rotation: {x: -0.0000000018626451, y: 5.8207605e-11, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: Group2_1
+      parentName: SubTool_14_11003746
+      position: {x: -0.015018538, y: -0.18020274, z: -0.012296713}
+      rotation: {x: -0.0000000018626451, y: 5.8207605e-11, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: Group4_1
+      parentName: SubTool_14_11003746
+      position: {x: -0.015018538, y: -0.18020274, z: -0.012296713}
+      rotation: {x: -0.0000000018626451, y: 5.8207605e-11, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: Group5_1
+      parentName: SubTool_14_11003746
+      position: {x: -0.015018538, y: -0.18020274, z: -0.012296713}
+      rotation: {x: -0.0000000018626451, y: 5.8207605e-11, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: Group6_1
+      parentName: SubTool_14_11003746
+      position: {x: -0.015018538, y: -0.18020274, z: -0.012296713}
+      rotation: {x: -0.0000000018626451, y: 5.8207605e-11, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: Group7_1
+      parentName: SubTool_14_11003746
+      position: {x: -0.015018538, y: -0.18020274, z: -0.012296713}
+      rotation: {x: -0.0000000018626451, y: 5.8207605e-11, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: Group8_1
+      parentName: SubTool_14_11003746
+      position: {x: -0.015018538, y: -0.18020274, z: -0.012296713}
+      rotation: {x: -0.0000000018626451, y: 5.8207605e-11, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: Group9_1
+      parentName: SubTool_14_11003746
+      position: {x: -0.015018538, y: -0.18020274, z: -0.012296713}
+      rotation: {x: -0.0000000018626451, y: 5.8207605e-11, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: Group10_1
+      parentName: SubTool_14_11003746
+      position: {x: -0.015018538, y: -0.18020274, z: -0.012296713}
+      rotation: {x: -0.0000000018626451, y: 5.8207605e-11, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: SubTool_15_6157401
+      parentName: Raider
+      position: {x: -0.000016558597, y: 0.00000022630982, z: 0.000017689457}
+      rotation: {x: -0.026040629, y: -0.60820335, z: -0.03393684, w: 0.7926278}
+      scale: {x: 0.0010000003, y: 0.0010000004, z: 0.0010000002}
+    - name: Group16488
+      parentName: SubTool_15_6157401
+      position: {x: -0.015018538, y: -0.18020274, z: -0.012296713}
+      rotation: {x: -0.0000000018626451, y: 5.8207605e-11, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: Group32972
+      parentName: SubTool_15_6157401
+      position: {x: -0.015018538, y: -0.18020274, z: -0.012296713}
+      rotation: {x: -0.0000000018626451, y: 5.8207605e-11, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: SubTool_16_7910556
+      parentName: Raider
+      position: {x: -0.000016558597, y: 0.00000022630982, z: 0.000017689457}
+      rotation: {x: -0.026040629, y: -0.60820335, z: -0.03393684, w: 0.7926278}
+      scale: {x: 0.0010000003, y: 0.0010000004, z: 0.0010000002}
+    - name: Group1_2
+      parentName: SubTool_16_7910556
+      position: {x: -0.015018538, y: -0.18020274, z: -0.012296713}
+      rotation: {x: -0.0000000018626451, y: 5.8207605e-11, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: Group2_2
+      parentName: SubTool_16_7910556
+      position: {x: -0.015018538, y: -0.18020274, z: -0.012296713}
+      rotation: {x: -0.0000000018626451, y: 5.8207605e-11, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: Group3
+      parentName: SubTool_16_7910556
+      position: {x: -0.015018538, y: -0.18020274, z: -0.012296713}
+      rotation: {x: -0.0000000018626451, y: 5.8207605e-11, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: SubTool_17_5029420
+      parentName: Raider
+      position: {x: -0.000016558597, y: 0.00000022630982, z: 0.000017689457}
+      rotation: {x: -0.026040629, y: -0.60820335, z: -0.03393684, w: 0.7926278}
+      scale: {x: 0.0010000003, y: 0.0010000004, z: 0.0010000002}
+    - name: Group1_3
+      parentName: SubTool_17_5029420
+      position: {x: -0.015018538, y: -0.18020274, z: -0.012296713}
+      rotation: {x: -0.0000000018626451, y: 5.8207605e-11, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: Group2_3
+      parentName: SubTool_17_5029420
+      position: {x: -0.015018538, y: -0.18020274, z: -0.012296713}
+      rotation: {x: -0.0000000018626451, y: 5.8207605e-11, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: Group4_2
+      parentName: SubTool_17_5029420
+      position: {x: -0.015018538, y: -0.18020274, z: -0.012296713}
+      rotation: {x: -0.0000000018626451, y: 5.8207605e-11, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: Group5_2
+      parentName: SubTool_17_5029420
+      position: {x: -0.015018538, y: -0.18020274, z: -0.012296713}
+      rotation: {x: -0.0000000018626451, y: 5.8207605e-11, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: Group6_2
+      parentName: SubTool_17_5029420
+      position: {x: -0.015018538, y: -0.18020274, z: -0.012296713}
+      rotation: {x: -0.0000000018626451, y: 5.8207605e-11, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: Group7_2
+      parentName: SubTool_17_5029420
+      position: {x: -0.015018538, y: -0.18020274, z: -0.012296713}
+      rotation: {x: -0.0000000018626451, y: 5.8207605e-11, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: Group8_2
+      parentName: SubTool_17_5029420
+      position: {x: -0.015018538, y: -0.18020274, z: -0.012296713}
+      rotation: {x: -0.0000000018626451, y: 5.8207605e-11, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: Group9_2
+      parentName: SubTool_17_5029420
+      position: {x: -0.015018538, y: -0.18020274, z: -0.012296713}
+      rotation: {x: -0.0000000018626451, y: 5.8207605e-11, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: Group10_2
+      parentName: SubTool_17_5029420
+      position: {x: -0.015018538, y: -0.18020274, z: -0.012296713}
+      rotation: {x: -0.0000000018626451, y: 5.8207605e-11, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: SubTool_24_11509973
+      parentName: Raider
+      position: {x: -0.000016558597, y: 0.00000022630982, z: 0.000017689457}
+      rotation: {x: -0.026040629, y: -0.60820335, z: -0.03393684, w: 0.7926278}
+      scale: {x: 0.0010000003, y: 0.0010000004, z: 0.0010000002}
+    - name: Group1_4
+      parentName: SubTool_24_11509973
+      position: {x: -0.015018538, y: -0.18020274, z: -0.012296713}
+      rotation: {x: -0.0000000018626451, y: 5.8207605e-11, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: SubTool_25_5207712
+      parentName: Raider
+      position: {x: -0.000016558597, y: 0.00000022630982, z: 0.000017689457}
+      rotation: {x: -0.026040629, y: -0.60820335, z: -0.03393684, w: 0.7926278}
+      scale: {x: 0.0010000003, y: 0.0010000004, z: 0.0010000002}
+    - name: ZBrush_defualt_group_2
+      parentName: SubTool_25_5207712
+      position: {x: -0.015018538, y: -0.18020274, z: -0.012296713}
+      rotation: {x: -0.0000000018626451, y: 5.8207605e-11, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: SubTool_26_15352375
+      parentName: Raider
+      position: {x: -0.000016558597, y: 0.00000022630982, z: 0.000017689457}
+      rotation: {x: -0.026040629, y: -0.60820335, z: -0.03393684, w: 0.7926278}
+      scale: {x: 0.0010000003, y: 0.0010000004, z: 0.0010000002}
+    - name: Group1_5
+      parentName: SubTool_26_15352375
+      position: {x: -0.015018538, y: -0.18020274, z: -0.012296713}
+      rotation: {x: -0.0000000018626451, y: 5.8207605e-11, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: SubTool_27_4096372
+      parentName: Raider
+      position: {x: -0.000016558597, y: 0.00000022630982, z: 0.000017689457}
+      rotation: {x: -0.026040629, y: -0.60820335, z: -0.03393684, w: 0.7926278}
+      scale: {x: 0.0010000003, y: 0.0010000004, z: 0.0010000002}
+    - name: ZBrush_defualt_group_3
+      parentName: SubTool_27_4096372
+      position: {x: -0.015018538, y: -0.18020274, z: -0.012296713}
+      rotation: {x: -0.0000000018626451, y: 5.8207605e-11, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: SubTool_28_7032672
+      parentName: Raider
+      position: {x: 0.00002591016, y: -0.0000032797975, z: 0.000047882826}
+      rotation: {x: 0.07342679, y: 0.495984, z: 0.71676725, w: 0.48461646}
+      scale: {x: 0.001, y: 0.0010000004, z: 0.0010000002}
+    - name: Group1_6
+      parentName: SubTool_28_7032672
+      position: {x: -0.091734715, y: 0.00035239029, z: -0.16612783}
+      rotation: {x: -9.313226e-10, y: 0.000000007450581, z: -0.0000000107102105, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: ZBrush_defualt_group_4
+      parentName: SubTool_28_7032672
+      position: {x: -0.091734715, y: 0.00035239029, z: -0.16612783}
+      rotation: {x: -9.313226e-10, y: 0.000000007450581, z: -0.0000000107102105, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: SubTool_29_2460105
+      parentName: Raider
+      position: {x: -0.000016558597, y: 0.00000022630982, z: 0.000017689457}
+      rotation: {x: -0.026040629, y: -0.60820335, z: -0.03393684, w: 0.7926278}
+      scale: {x: 0.0010000003, y: 0.0010000004, z: 0.0010000002}
+    - name: Group25228
+      parentName: SubTool_29_2460105
+      position: {x: -0.015018538, y: -0.18020274, z: -0.012296713}
+      rotation: {x: -0.0000000018626451, y: 5.8207605e-11, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: Group25243
+      parentName: SubTool_29_2460105
+      position: {x: -0.015018538, y: -0.18020274, z: -0.012296713}
+      rotation: {x: -0.0000000018626451, y: 5.8207605e-11, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: Group25258
+      parentName: SubTool_29_2460105
+      position: {x: -0.015018538, y: -0.18020274, z: -0.012296713}
+      rotation: {x: -0.0000000018626451, y: 5.8207605e-11, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: Group25273
+      parentName: SubTool_29_2460105
+      position: {x: -0.015018538, y: -0.18020274, z: -0.012296713}
+      rotation: {x: -0.0000000018626451, y: 5.8207605e-11, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: Group25288
+      parentName: SubTool_29_2460105
+      position: {x: -0.015018538, y: -0.18020274, z: -0.012296713}
+      rotation: {x: -0.0000000018626451, y: 5.8207605e-11, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: Group25303
+      parentName: SubTool_29_2460105
+      position: {x: -0.015018538, y: -0.18020274, z: -0.012296713}
+      rotation: {x: -0.0000000018626451, y: 5.8207605e-11, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: Group25318
+      parentName: SubTool_29_2460105
+      position: {x: -0.015018538, y: -0.18020274, z: -0.012296713}
+      rotation: {x: -0.0000000018626451, y: 5.8207605e-11, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: Group25333
+      parentName: SubTool_29_2460105
+      position: {x: -0.015018538, y: -0.18020274, z: -0.012296713}
+      rotation: {x: -0.0000000018626451, y: 5.8207605e-11, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: Group25348
+      parentName: SubTool_29_2460105
+      position: {x: -0.015018538, y: -0.18020274, z: -0.012296713}
+      rotation: {x: -0.0000000018626451, y: 5.8207605e-11, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: Group25363
+      parentName: SubTool_29_2460105
+      position: {x: -0.015018538, y: -0.18020274, z: -0.012296713}
+      rotation: {x: -0.0000000018626451, y: 5.8207605e-11, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: Group25378
+      parentName: SubTool_29_2460105
+      position: {x: -0.015018538, y: -0.18020274, z: -0.012296713}
+      rotation: {x: -0.0000000018626451, y: 5.8207605e-11, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: Group25393
+      parentName: SubTool_29_2460105
+      position: {x: -0.015018538, y: -0.18020274, z: -0.012296713}
+      rotation: {x: -0.0000000018626451, y: 5.8207605e-11, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: Group25408
+      parentName: SubTool_29_2460105
+      position: {x: -0.015018538, y: -0.18020274, z: -0.012296713}
+      rotation: {x: -0.0000000018626451, y: 5.8207605e-11, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: Group25423
+      parentName: SubTool_29_2460105
+      position: {x: -0.015018538, y: -0.18020274, z: -0.012296713}
+      rotation: {x: -0.0000000018626451, y: 5.8207605e-11, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: SubTool_30_2010044
+      parentName: Raider
+      position: {x: -0.000016558597, y: 0.00000022630982, z: 0.000017689457}
+      rotation: {x: -0.026040629, y: -0.60820335, z: -0.03393684, w: 0.7926278}
+      scale: {x: 0.0010000003, y: 0.0010000004, z: 0.0010000002}
+    - name: Group2299
+      parentName: SubTool_30_2010044
+      position: {x: -0.015018538, y: -0.18020274, z: -0.012296713}
+      rotation: {x: -0.0000000018626451, y: 5.8207605e-11, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: Group6363
+      parentName: SubTool_30_2010044
+      position: {x: -0.015018538, y: -0.18020274, z: -0.012296713}
+      rotation: {x: -0.0000000018626451, y: 5.8207605e-11, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: Group14686
+      parentName: SubTool_30_2010044
+      position: {x: -0.015018538, y: -0.18020274, z: -0.012296713}
+      rotation: {x: -0.0000000018626451, y: 5.8207605e-11, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: Group14718
+      parentName: SubTool_30_2010044
+      position: {x: -0.015018538, y: -0.18020274, z: -0.012296713}
+      rotation: {x: -0.0000000018626451, y: 5.8207605e-11, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: Group18744
+      parentName: SubTool_30_2010044
+      position: {x: -0.015018538, y: -0.18020274, z: -0.012296713}
+      rotation: {x: -0.0000000018626451, y: 5.8207605e-11, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: Group18776
+      parentName: SubTool_30_2010044
+      position: {x: -0.015018538, y: -0.18020274, z: -0.012296713}
+      rotation: {x: -0.0000000018626451, y: 5.8207605e-11, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: Group22759
+      parentName: SubTool_30_2010044
+      position: {x: -0.015018538, y: -0.18020274, z: -0.012296713}
+      rotation: {x: -0.0000000018626451, y: 5.8207605e-11, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: Group26855
+      parentName: SubTool_30_2010044
+      position: {x: -0.015018538, y: -0.18020274, z: -0.012296713}
+      rotation: {x: -0.0000000018626451, y: 5.8207605e-11, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: Group35175
+      parentName: SubTool_30_2010044
+      position: {x: -0.015018538, y: -0.18020274, z: -0.012296713}
+      rotation: {x: -0.0000000018626451, y: 5.8207605e-11, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: Group35207
+      parentName: SubTool_30_2010044
+      position: {x: -0.015018538, y: -0.18020274, z: -0.012296713}
+      rotation: {x: -0.0000000018626451, y: 5.8207605e-11, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: Group39239
+      parentName: SubTool_30_2010044
+      position: {x: -0.015018538, y: -0.18020274, z: -0.012296713}
+      rotation: {x: -0.0000000018626451, y: 5.8207605e-11, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: Group39271
+      parentName: SubTool_30_2010044
+      position: {x: -0.015018538, y: -0.18020274, z: -0.012296713}
+      rotation: {x: -0.0000000018626451, y: 5.8207605e-11, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: Group47346
+      parentName: SubTool_30_2010044
+      position: {x: -0.015018538, y: -0.18020274, z: -0.012296713}
+      rotation: {x: -0.0000000018626451, y: 5.8207605e-11, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: Group51404
+      parentName: SubTool_30_2010044
+      position: {x: -0.015018538, y: -0.18020274, z: -0.012296713}
+      rotation: {x: -0.0000000018626451, y: 5.8207605e-11, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: Group55635
+      parentName: SubTool_30_2010044
+      position: {x: -0.015018538, y: -0.18020274, z: -0.012296713}
+      rotation: {x: -0.0000000018626451, y: 5.8207605e-11, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: Group55667
+      parentName: SubTool_30_2010044
+      position: {x: -0.015018538, y: -0.18020274, z: -0.012296713}
+      rotation: {x: -0.0000000018626451, y: 5.8207605e-11, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: Group59731
+      parentName: SubTool_30_2010044
+      position: {x: -0.015018538, y: -0.18020274, z: -0.012296713}
+      rotation: {x: -0.0000000018626451, y: 5.8207605e-11, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: Group59763
+      parentName: SubTool_30_2010044
+      position: {x: -0.015018538, y: -0.18020274, z: -0.012296713}
+      rotation: {x: -0.0000000018626451, y: 5.8207605e-11, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: SubTool_32_2184625
+      parentName: Raider
+      position: {x: -0.000016558597, y: 0.00000022630982, z: 0.000017689457}
+      rotation: {x: -0.026040629, y: -0.60820335, z: -0.03393684, w: 0.7926278}
+      scale: {x: 0.0010000003, y: 0.0010000004, z: 0.0010000002}
+    - name: Group1_7
+      parentName: SubTool_32_2184625
+      position: {x: -0.015018538, y: -0.18020274, z: -0.012296713}
+      rotation: {x: -0.0000000018626451, y: 5.8207605e-11, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: Group2_4
+      parentName: SubTool_32_2184625
+      position: {x: -0.015018538, y: -0.18020274, z: -0.012296713}
+      rotation: {x: -0.0000000018626451, y: 5.8207605e-11, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: Head
+      parentName: Raider
+      position: {x: 0.000010083986, y: -0.0000020587636, z: -0.00000022265631}
+      rotation: {x: -0.0055832863, y: -0.13040657, z: -0.042410575, w: 0.9905374}
+      scale: {x: 0.0010000002, y: 0.0010000004, z: 0.0010000002}
+    - name: Eye1
+      parentName: Head
+      position: {x: -0, y: 0.0000000064086922, z: 0}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group16237
+      parentName: Eye1
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group16238
+      parentName: Eye1
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group16239
+      parentName: Eye1
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group16240
+      parentName: Eye1
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group16241
+      parentName: Eye1
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group16242
+      parentName: Eye1
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group16243
+      parentName: Eye1
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group16244
+      parentName: Eye1
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group16245
+      parentName: Eye1
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group16246
+      parentName: Eye1
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group16247
+      parentName: Eye1
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group16248
+      parentName: Eye1
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group53826
+      parentName: Eye1
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Eye2
+      parentName: Head
+      position: {x: -0, y: 0.0000000064086922, z: 0}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group16237_1
+      parentName: Eye2
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group16238_1
+      parentName: Eye2
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group16239_1
+      parentName: Eye2
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group16240_1
+      parentName: Eye2
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group16241_1
+      parentName: Eye2
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group16242_1
+      parentName: Eye2
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group16243_1
+      parentName: Eye2
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group16244_1
+      parentName: Eye2
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group16245_1
+      parentName: Eye2
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group16246_1
+      parentName: Eye2
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group16247_1
+      parentName: Eye2
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group16248_1
+      parentName: Eye2
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group53826_1
+      parentName: Eye2
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: pipe1
+      parentName: Head
+      position: {x: -0, y: 0.0000000064086922, z: 0}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group51500
+      parentName: pipe1
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: pipe2
+      parentName: Head
+      position: {x: -0, y: 0.0000000064086922, z: 0}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group51500_1
+      parentName: pipe2
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: SubTool_0_12940067
+      parentName: Head
+      position: {x: -0, y: 0.0000000064086922, z: 0}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group1_8
+      parentName: SubTool_0_12940067
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group65535
+      parentName: SubTool_0_12940067
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: SubTool_5_9735103
+      parentName: Head
+      position: {x: -0, y: 0.0000000064086922, z: 0}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group1_9
+      parentName: SubTool_5_9735103
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group2_5
+      parentName: SubTool_5_9735103
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group3_1
+      parentName: SubTool_5_9735103
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group4_3
+      parentName: SubTool_5_9735103
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group5_3
+      parentName: SubTool_5_9735103
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group6_3
+      parentName: SubTool_5_9735103
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group7_3
+      parentName: SubTool_5_9735103
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group8_3
+      parentName: SubTool_5_9735103
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group9_3
+      parentName: SubTool_5_9735103
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group10_3
+      parentName: SubTool_5_9735103
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group11
+      parentName: SubTool_5_9735103
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group65535_1
+      parentName: SubTool_5_9735103
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: ZBrush_defualt_group_5
+      parentName: SubTool_5_9735103
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: SubTool_9_14675334
+      parentName: Head
+      position: {x: -0, y: 0.0000000064086922, z: 0}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group1662
+      parentName: SubTool_9_14675334
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: SubTool_10_6744074
+      parentName: Head
+      position: {x: -0, y: 0.0000000064086922, z: 0}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group1_10
+      parentName: SubTool_10_6744074
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: SubTool_11_3351504
+      parentName: Head
+      position: {x: -0, y: 0.0000000064086922, z: 0}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group1963
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group15145
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group15146
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group15415
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group15416
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group15417
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group15418
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group15419
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group15420
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group15421
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group15422
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group15423
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group15424
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group15425
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group15426
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group15427
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group15428
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group15429
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group15430
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group15431
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group15432
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group15433
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group15434
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group15670
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group15671
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group15672
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group15907
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group15908
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group15909
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group15910
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group15911
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group15912
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group15913
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group15914
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group15915
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group15916
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group15917
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group15918
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group15919
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group15920
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group15921
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group15922
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group15923
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group15924
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group15925
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group15926
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group15927
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group15928
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group15929
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group15930
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group15931
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group15932
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group15933
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group15934
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group15935
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group15936
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group15937
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group16129
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group16130
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group16131
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group16132
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group16133
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group16134
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group16135
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group16136
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group16137
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group16138
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group16139
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group16140
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group16141
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group16142
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group16143
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group16144
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group16145
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group16146
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group16147
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group16148
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group16149
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group16150
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group16336
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group16337
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group16338
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group31460
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group31734
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group31735
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group31736
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group31992
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group31993
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group31994
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group32234
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group32459
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group32460
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group32461
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group32462
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group32463
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group32464
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group32670
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group32671
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group32672
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group47772
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group47773
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group47774
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group48051
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group48313
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group48314
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group48315
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group48559
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group48560
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group48561
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group48789
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group49003
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group64084
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group64085
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group64632
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group64633
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group64634
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group64635
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group64636
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group64637
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group64883
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group64884
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group64885
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group65116
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group65117
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group65118
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group65119
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group65120
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group65121
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group65335
+      parentName: SubTool_11_3351504
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: SubTool_22_13324786
+      parentName: Head
+      position: {x: -0, y: 0.0000000064086922, z: 0}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group1_11
+      parentName: SubTool_22_13324786
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: SubTool_23_13068857
+      parentName: Head
+      position: {x: -0, y: 0.0000000064086922, z: 0}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group1_12
+      parentName: SubTool_23_13068857
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group2_6
+      parentName: SubTool_23_13068857
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group3_2
+      parentName: SubTool_23_13068857
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group4_4
+      parentName: SubTool_23_13068857
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Group5_4
+      parentName: SubTool_23_13068857
+      position: {x: -0.018053241, y: -0.18020326, z: 0.0050679455}
+      rotation: {x: -9.313226e-10, y: -0.000000011292286, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: mixamorig:Hips
+      parentName: Raider_Blender2 (1)(Clone)
+      position: {x: -6.705523e-11, y: 0.010890402, z: -0.0013035286}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:LeftUpLeg
+      parentName: mixamorig:Hips
+      position: {x: -0.0021432522, y: -0.00071603956, z: 0.00008129483}
+      rotation: {x: 0.000073869596, y: 0.0052328794, z: 0.9998867, w: -0.014114835}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:LeftLeg
+      parentName: mixamorig:LeftUpLeg
+      position: {x: -1.0440202e-12, y: 0.003940404, z: -1.0985052e-12}
+      rotation: {x: -0.040640138, y: -0.009949429, z: 0.122041, w: 0.9916428}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:LeftFoot
+      parentName: mixamorig:LeftLeg
+      position: {x: 7.365102e-12, y: 0.003085037, z: 8.2334676e-13}
+      rotation: {x: 0.3548287, y: 0.3009583, z: -0.03277459, w: 0.8845601}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:LeftToeBase
+      parentName: mixamorig:LeftFoot
+      position: {x: -8.0184796e-11, y: 0.0035708789, z: 9.649707e-11}
+      rotation: {x: 0.4522943, y: -0.3043753, z: 0.167601, w: 0.8213985}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:LeftToe_End
+      parentName: mixamorig:LeftToeBase
+      position: {x: 1.5089557e-12, y: 0.002036125, z: -1.0688556e-12}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:RightUpLeg
+      parentName: mixamorig:Hips
+      position: {x: 0.0021432522, y: -0.00071603956, z: 0.0000034736254}
+      rotation: {x: -0.000027391725, y: 0.0019403226, z: 0.9998985, w: 0.014115667}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:RightLeg
+      parentName: mixamorig:RightUpLeg
+      position: {x: -1.7505302e-12, y: 0.0039402177, z: 1.2310068e-13}
+      rotation: {x: -0.022358004, y: 0.0036854306, z: -0.112100035, w: 0.9934386}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:RightFoot
+      parentName: mixamorig:RightLeg
+      position: {x: 6.9396384e-11, y: 0.0030844135, z: 1.4750564e-12}
+      rotation: {x: 0.33134833, y: -0.32758117, z: 0.0203008, w: 0.8845828}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:RightToeBase
+      parentName: mixamorig:RightFoot
+      position: {x: -1.9474812e-11, y: 0.0035306918, z: -1.727405e-11}
+      rotation: {x: 0.45413384, y: 0.3269632, z: -0.18373558, w: 0.8081453}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:RightToe_End
+      parentName: mixamorig:RightToeBase
+      position: {x: -4.2283616e-12, y: 0.0020358267, z: 5.187367e-12}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:Spine
+      parentName: mixamorig:Hips
+      position: {x: -0, y: 0.0011502649, z: 0.00000853695}
+      rotation: {x: 0.0037107912, y: 0, z: -0, w: 0.99999315}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:Spine1
+      parentName: mixamorig:Spine
+      position: {x: -0, y: 0.0013420134, z: 2.6755518e-13}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:Spine2
+      parentName: mixamorig:Spine1
+      position: {x: -0, y: 0.00153373, z: 8.529583e-14}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:LeftShoulder
+      parentName: mixamorig:Spine2
+      position: {x: -0.00069703883, y: 0.0013086043, z: -0.0000578284}
+      rotation: {x: 0.553912, y: -0.42295417, z: 0.5939301, w: 0.40191832}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:LeftArm
+      parentName: mixamorig:LeftShoulder
+      position: {x: 3.4756243e-12, y: 0.001736273, z: 7.5515e-12}
+      rotation: {x: -0.07269844, y: 0.70487636, z: -0.13125674, w: 0.6932792}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:LeftForeArm
+      parentName: mixamorig:LeftArm
+      position: {x: -3.088025e-11, y: 0.0020667745, z: -4.4479793e-12}
+      rotation: {x: -0.023847474, y: -0.39800867, z: -0.015719183, w: 0.916937}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:LeftHand
+      parentName: mixamorig:LeftForeArm
+      position: {x: -1.1999278e-11, y: 0.0030376439, z: 1.9309032e-11}
+      rotation: {x: 0.1001179, y: 0.43031785, z: -0.48950112, w: -0.75179225}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:LeftHandIndex1
+      parentName: mixamorig:LeftHand
+      position: {x: -7.613184e-12, y: 0.0015147984, z: -1.0670101e-11}
+      rotation: {x: 0.022102877, y: 0.8985758, z: -0.04556874, w: 0.43588594}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:LeftHandIndex2
+      parentName: mixamorig:LeftHandIndex1
+      position: {x: 3.388085e-12, y: 0.00017221426, z: -8.067159e-13}
+      rotation: {x: 0.3155666, y: 0.0000031292423, z: 0.0968177, w: 0.94395125}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:LeftHandIndex3
+      parentName: mixamorig:LeftHandIndex2
+      position: {x: 0.000032799377, y: 0.0001265252, z: -0.0001069181}
+      rotation: {x: -0.016769674, y: 0.0053322595, z: 0.0011652752, w: 0.99984455}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:LeftHandIndex4
+      parentName: mixamorig:LeftHandIndex3
+      position: {x: 0.000022854532, y: 0.00008405695, z: -0.000055749584}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:RightShoulder
+      parentName: mixamorig:Spine2
+      position: {x: 0.00069703883, y: 0.0013095083, z: 0.00006400892}
+      rotation: {x: 0.5955427, y: 0.401457, z: -0.551778, w: 0.42391297}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:RightArm
+      parentName: mixamorig:RightShoulder
+      position: {x: 2.4212895e-12, y: 0.001736273, z: 1.2543082e-11}
+      rotation: {x: -0.14166947, y: -0.024716284, z: 0.009277849, w: 0.989562}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:RightForeArm
+      parentName: mixamorig:RightArm
+      position: {x: -7.29359e-12, y: 0.0020622092, z: -3.2897948e-11}
+      rotation: {x: -0.03211805, y: -0.42441252, z: -0.0034189846, w: 0.9048927}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:RightHand
+      parentName: mixamorig:RightForeArm
+      position: {x: 1.5071146e-11, y: 0.002701218, z: 3.108633e-11}
+      rotation: {x: 0.42749676, y: -0.48571652, z: 0.09103236, w: 0.7569935}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:RightHandIndex1
+      parentName: mixamorig:RightHand
+      position: {x: -1.583973e-11, y: 0.0021955722, z: 1.8538697e-11}
+      rotation: {x: 0.0082098525, y: 0.9893459, z: -0.06171702, w: 0.13159886}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:RightHandIndex2
+      parentName: mixamorig:RightHandIndex1
+      position: {x: 1.999256e-12, y: 0.0001669204, z: -3.075197e-12}
+      rotation: {x: 0.08417631, y: 0.000000119209275, z: -0.091368705, w: 0.99225307}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:RightHandIndex3
+      parentName: mixamorig:RightHandIndex2
+      position: {x: -0.000042487616, y: 0.00017418576, z: -0.000039144823}
+      rotation: {x: -0.011177383, y: -0.0011877744, z: 0.006846308, w: 0.99991345}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:RightHandIndex4
+      parentName: mixamorig:RightHandIndex3
+      position: {x: -0.00000913064, y: 0.000049813716, z: -0.000006265676}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:Neck
+      parentName: mixamorig:Spine2
+      position: {x: -0, y: 0.0017254452, z: -1.0414977e-10}
+      rotation: {x: -0.0037108327, y: 0, z: -0, w: 0.99999315}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:Head
+      parentName: mixamorig:Neck
+      position: {x: -0, y: 0.00071668037, z: 0.0001497368}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:HeadTop_End
+      parentName: mixamorig:Head
+      position: {x: -0, y: 0.0030512551, z: 0.00063750223}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 0.012
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 3
+  humanoidOversampling: 1
+  avatarSetup: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
