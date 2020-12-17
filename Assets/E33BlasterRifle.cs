@@ -15,12 +15,14 @@ public class E33BlasterRifle : MonoBehaviour
     public Collider coll;
     public Transform bodyT;
     public Vector3 offset;
+    Light blastLight;
 
 	private void Awake()
 	{
         interactableObject = GetComponent<VRTK_InteractableObject>();
         fireSource = GetComponentInChildren<AudioSource>();
         bulletsT = GameObject.Find("Bullets").transform;
+        blastLight = GetComponentInChildren<Light>();
     }
 
 	private void OnEnable()
@@ -67,6 +69,7 @@ public class E33BlasterRifle : MonoBehaviour
         bullet.transform.rotation = bulletPointT.rotation;
 
         VRTKCustom_Haptics.instance.BlasterShot();
+        StartCoroutine(StartLight());
     }
 
 
@@ -78,6 +81,11 @@ public class E33BlasterRifle : MonoBehaviour
     }
 
 
-
+    IEnumerator StartLight()
+	{
+        blastLight.enabled = true;
+        yield return new WaitForSeconds(0.05f);
+        blastLight.enabled = false;
+    }
 
 }

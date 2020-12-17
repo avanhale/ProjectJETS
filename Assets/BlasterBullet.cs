@@ -50,7 +50,7 @@ public class BlasterBullet : MonoBehaviour
 	{
         if (!isMoving) return;
 
-        Ray ray = new Ray(transform.position, transform.forward);
+        Ray ray = new Ray(transform.position - transform.forward, transform.forward);
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, bulletLength))
 		{
@@ -69,6 +69,18 @@ public class BlasterBullet : MonoBehaviour
                 tuskenBiker.Damage(damage);
                 StartCoroutine(HitTargetRoutine(hit.point));
             }
+
+
+
+            Sandworm sandworm = hit.collider.GetComponentInParent<Sandworm>();
+            if (sandworm)
+            {
+                print("hit sand worm");
+                sandworm.Damage(damage);
+                StartCoroutine(HitTargetRoutine(hit.point));
+            }
+
+
         }
     }
 
