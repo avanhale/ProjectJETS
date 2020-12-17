@@ -9,7 +9,7 @@
 //   RenderLoop : Surface Shader
 //////////////////////////////////////////////////////
 
-Shader "Hidden/MicroSplat/Terrain_Tatooine_Base443142028" {
+Shader "Hidden/MicroSplat/Terrain_Tatooine_Base-1959703844" {
    Properties {
       [HideInInspector] _Control0 ("Control0", 2D) = "red" {}
       [HideInInspector] _Control1 ("Control1", 2D) = "black" {}
@@ -62,6 +62,7 @@ Shader "Hidden/MicroSplat/Terrain_Tatooine_Base443142028" {
       #define _USEGRADMIP 1
       #define _MAX24TEXTURES 1
       #define _PERTEXUVSCALEOFFSET 1
+      #define _PERTEXFUZZYSHADE 1
       #define _PERTEXSATURATION 1
       #define _PERTEXTINT 1
       #define _PERTEXBRIGHTNESS 1

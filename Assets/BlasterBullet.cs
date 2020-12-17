@@ -10,16 +10,19 @@ public class BlasterBullet : MonoBehaviour
     public GameObject bulletGO, hitPXGO;
 
     public bool isMoving;
+    Light light;
 
 	private void Awake()
 	{
         isMoving = true;
         hitPXGO.SetActive(false);
+        light = GetComponentInChildren<Light>();
     }
 
 	private void Start()
 	{
         ToBlaster(true);
+        Invoke("Destroy", 5);
     }
 
     bool hasMovedU, hasMovedS;
@@ -58,12 +61,21 @@ public class BlasterBullet : MonoBehaviour
                 trooper.Damage(damage);
                 StartCoroutine(HitTargetRoutine(hit.point));
             }
+
+            TuskenBiker tuskenBiker = hit.collider.GetComponentInParent<TuskenBiker>();
+            if (tuskenBiker)
+			{
+                print("hit tusken biker");
+                tuskenBiker.Damage(damage);
+                StartCoroutine(HitTargetRoutine(hit.point));
+            }
         }
     }
 
 
     IEnumerator HitTargetRoutine(Vector3 hitPoint)
 	{
+        StartCoroutine(LightHit());
         isMoving = false;
         bulletGO.SetActive(false);
         hitPXGO.transform.position = hitPoint;
@@ -72,5 +84,17 @@ public class BlasterBullet : MonoBehaviour
         Destroy(gameObject);
     }
 
+    IEnumerator LightHit()
+	{
+        light.intensity *= 2;
+        yield return new WaitForSeconds(0.05f);
+        light.enabled = false;
+    }
+
+
+    void Destroy()
+	{
+        Destroy(gameObject);
+    }
 
 }

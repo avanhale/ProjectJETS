@@ -11,7 +11,7 @@ public class PodRacer : MonoBehaviour
     public GameObject jet01, jet02;
     VRTK_BodyPhysics bodyPhysics;
     BezierWalkerWithSpeed splineWalker;
-    public AudioSource jetsSource;
+    public AudioSource jetsSource, jetsSource2, engineSource;
 
 	private void Awake()
 	{
@@ -25,7 +25,11 @@ public class PodRacer : MonoBehaviour
 
     void Update()
     {
-        
+        if (splineWalker.enabled)
+		{
+            //bodyPhysics.transform.localPosition = bodyPhysics.transform.localPosition.WithY(Mathf.Sin(Time.time) * 0.05f);
+
+        }
     }
 
     [ContextMenu("EnterDriving")]
@@ -47,6 +51,8 @@ public class PodRacer : MonoBehaviour
         isDriving = true;
         splineWalker.enabled = true;
         jetsSource.Play();
+        jetsSource2.Play();
+        engineSource.Play();
         Transform babyT = BabyYoda.instance.transform;
         BabyYoda.instance.ActivateCarriage();
         babyT.SetParent(seat2T);

@@ -62,6 +62,7 @@ Shader "MicroSplat/Terrain_Tatooine" {
       #define _USEGRADMIP 1
       #define _MAX24TEXTURES 1
       #define _PERTEXUVSCALEOFFSET 1
+      #define _PERTEXFUZZYSHADE 1
       #define _PERTEXSATURATION 1
       #define _PERTEXTINT 1
       #define _PERTEXBRIGHTNESS 1
@@ -69,6 +70,7 @@ Shader "MicroSplat/Terrain_Tatooine" {
       #define _PERTEXNORMSTR 1
       #define _BRANCHSAMPLES 1
       #define _BRANCHSAMPLESAGR 1
+      #define _MSRENDERLOOP_SURFACESHADER 1
 
       #define _MSRENDERLOOP_SURFACESHADER 1
 
@@ -3115,7 +3117,7 @@ UNITY_INSTANCING_BUFFER_END(Terrain)
 ENDCG
 
    }
-   Dependency "BaseMapShader" = "Hidden/MicroSplat/Terrain_Tatooine_Base443142028"
+   Dependency "BaseMapShader" = "Hidden/MicroSplat/Terrain_Tatooine_Base-1959703844"
    CustomEditor "MicroSplatShaderGUI"
    Fallback "Nature/Terrain/Diffuse"
 }
