@@ -10,6 +10,7 @@ public class BlasterBullet : MonoBehaviour
     public GameObject bulletGO, hitPXGO;
 
     public bool isMoving;
+    public bool isTusken;
     Light light;
 
 	private void Awake()
@@ -21,7 +22,7 @@ public class BlasterBullet : MonoBehaviour
 
 	private void Start()
 	{
-        ToBlaster(true);
+        if (!isTusken) ToBlaster(true);
         Invoke("Destroy", 5);
     }
 
@@ -30,7 +31,7 @@ public class BlasterBullet : MonoBehaviour
     {
         if (isMoving)
         {
-            if (!hasMovedU)
+            if (!hasMovedU && !isTusken)
 			{
                 ToBlaster(false);
 			}
@@ -48,7 +49,7 @@ public class BlasterBullet : MonoBehaviour
 
     private void FixedUpdate()
 	{
-        if (!isMoving) return;
+        if (!isMoving || isTusken) return;
 
         Ray ray = new Ray(transform.position - transform.forward, transform.forward);
         RaycastHit hit;
@@ -66,7 +67,7 @@ public class BlasterBullet : MonoBehaviour
             if (tuskenBiker)
 			{
                 print("hit tusken biker");
-                tuskenBiker.Damage(damage);
+                tuskenBiker.Damage(damage, hit.point);
                 StartCoroutine(HitTargetRoutine(hit.point));
             }
 

@@ -1,18 +1,36 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using VRTK;
 
 public class BoKatanHelmet : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+	VRTK_InteractableObject interactableObject;
+	Rigidbody body;
+	private void Awake()
+	{
+		interactableObject = GetComponent<VRTK_InteractableObject>();
+		body = GetComponent<Rigidbody>();
+	}
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	private void OnEnable()
+	{
+		interactableObject.InteractableObjectGrabbed += InteractableObject_InteractableObjectGrabbed;
+		interactableObject.InteractableObjectUngrabbed += InteractableObject_InteractableObjectUngrabbed;
+	}
+	private void OnDisable()
+	{
+		interactableObject.InteractableObjectGrabbed -= InteractableObject_InteractableObjectGrabbed;
+		interactableObject.InteractableObjectUngrabbed -= InteractableObject_InteractableObjectUngrabbed;
+	}
+	
+
+	private void InteractableObject_InteractableObjectGrabbed(object sender, InteractableObjectEventArgs e)
+	{
+		body.constraints = RigidbodyConstraints.None;
+	}
+	private void InteractableObject_InteractableObjectUngrabbed(object sender, InteractableObjectEventArgs e)
+	{
+		//body.constraints = RigidbodyConstraints.None;
+	}
 }

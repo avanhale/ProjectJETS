@@ -15,8 +15,8 @@ public class VRTKCustom_Haptics : VRTK.CustomScripts.VRTKCustom_HapticFeedback
     [Header("HyperSpace Pulse")]
     public Pulse hyperSpacePulse;
 
-    [Header("InBounds Pulse")]
-    public Pulse inBoundsPulse;
+    [Header("Sandcrawler Pulse")]
+    public Pulse sandcrawlerPulse;
 
     [Header("MPTurn Pulse")]
     public Pulse mpTurnPulse;
@@ -56,9 +56,21 @@ public class VRTKCustom_Haptics : VRTK.CustomScripts.VRTKCustom_HapticFeedback
         HapticPulse(hyperSpacePulse, true);
         HapticPulse(hyperSpacePulse, false);
     }
-    public void InBounds()
+
+    [ContextMenu("Sandcrawler")]
+    public void SandcrawlerPulse()
     {
-        HapticPulse(inBoundsPulse, false);
+        HapticPulse(sandcrawlerPulse, true);
+        HapticPulse(sandcrawlerPulse, false);
+    }
+
+    [ContextMenu("StopPulsing")]
+    public void StopPulsing()
+	{
+        CancelHapticPulse();
+        //StopCoroutine(_asyncHapticPulse);
+        //HapticPulse(new Pulse(0, 0, 0, 0, false), true);
+        //HapticPulse(new Pulse(0, 0, 0, 0, false), false);
     }
 
     public void ThrowStrong(bool isRightHand)

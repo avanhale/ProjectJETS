@@ -32,15 +32,13 @@ public class E33BlasterRifle : MonoBehaviour
         interactableObject.InteractableObjectUngrabbed += InteractableObject_InteractableObjectUngrabbed;
 
     }
-
-	
-
 	private void OnDisable()
     {
         controllerR.UnsubscribeToButtonAliasEvent(VRTK_ControllerEvents.ButtonAlias.TriggerPress, true, Controller_FireButtonPressed);
         controllerL.SubscribeToButtonAliasEvent(VRTK_ControllerEvents.ButtonAlias.TriggerPress, true, Controller_FireButtonPressed);
         interactableObject.InteractableObjectUngrabbed -= InteractableObject_InteractableObjectUngrabbed;
     }
+
     private void Controller_FireButtonPressed(object sender, ControllerInteractionEventArgs e)
 	{
         if (interactableObject.IsGrabbed())
@@ -48,7 +46,6 @@ public class E33BlasterRifle : MonoBehaviour
             FireGun();
         }
 	}
-
     private void InteractableObject_InteractableObjectUngrabbed(object sender, InteractableObjectEventArgs e)
     {
         StartCoroutine(ReleasedRoutine());

@@ -9,7 +9,15 @@ public class Sandworm : MonoBehaviour
     public Transform holeT;
     public AudioSource burrowSource, screechSource;
     bool isBurrowing;
-	private void Awake()
+    public bool isBIG;
+    int numHits;
+    int targetHits = 2;
+    public Transform baseT;
+    public float slamDelay;
+
+    public AudioSource slamSource;
+
+    private void Awake()
 	{
         anim = GetComponentInChildren<Animator>();
         Invoke("StopAnim", .75f);
@@ -20,13 +28,24 @@ public class Sandworm : MonoBehaviour
     [ContextMenu("Reveal")]
     public void Reveal()
 	{
-        anim.transform.DOLocalMoveY(1.5f, 1.5f).SetEase(Ease.InOutCubic);
-        DOTween.To(() => anim.speed, x => anim.speed = x, 1, 2f);
+        anim.transform.DOLocalMoveY(1.5f, isBIG?3.5f: 1.5f).SetEase(Ease.InOutCubic);
+        DOTween.To(() => anim.speed, x => anim.speed = x, isBIG?0.5f:1, 2f);
         holeT.DOLocalMoveY(0, 1f);
         burrowSource.Play();
         screechSource.Play();
-        Invoke("LowPitch", 3.5f);
+        Invoke("LowPitch", isBIG?5.5f: 3.5f);
+
+        if (isBIG) Invoke("Slam", slamDelay);
     }
+
+    [ContextMenu("Slam")]
+    public void Slam()
+	{
+        DOTween.To(() => anim.speed, x => anim.speed = x, 0, 4f);
+        baseT.DOLocalRotate(Vector3.left * 70, 5f).SetEase(Ease.InQuad);
+        slamSource.gameObject.SetActive(true);
+    }
+
 
     [ContextMenu("Burrow")]
     public void Burrow()
@@ -44,22 +63,40 @@ public class Sandworm : MonoBehaviour
 
     void LowPitch()
 	{
-        screechSource.pitch = 0.8f;
-        screechSource.volume = 0.85f;
+        screechSource.pitch /= 1.4f;
+        screechSource.volume *= 0.85f;
 	}
 
+
+    IEnumerator HitAnim()
+	{
+        float speed = anim.speed;
+        anim.speed *= 2;
+        yield return new WaitForSeconds(1);
+        anim.speed  = speed;
+
+    }
 
 
     void StopAnim()
 	{
         anim.speed = 0;
-        Reveal();
+        //Reveal();
 	}
 
 
     public void Damage(int damage)
 	{
-        Burrow();
+        if (!isBurrowing)
+        {
+            numHits++;
+            StartCoroutine(HitAnim());
+            if (numHits == targetHits)
+            {
+                Burrow();
+            }
+
+        }
 	}
 
 

@@ -14,7 +14,7 @@ public class Sandcrawler : MonoBehaviour
 	private void Awake()
 	{
         anim = GetComponentInChildren<Animator>();
-        //Close();
+        Close();
 
     }
 
@@ -52,6 +52,30 @@ public class Sandcrawler : MonoBehaviour
 	{
         anim.SetBool("isClosed", true);
         Invoke("StartMoving", 5);
+    }
+
+
+    bool isParented;
+	private void OnTriggerEnter(Collider other)
+	{
+        OVRCameraRig player = other.GetComponentInParent<OVRCameraRig>();
+        if (player && !isParented)
+		{
+            player.transform.SetParent(transform);
+            isParented = true;
+            //VRTKCustom_Haptics.instance.SandcrawlerPulse();
+        }
+	}
+
+    private void OnTriggerExit(Collider other)
+    {
+        OVRCameraRig player = other.GetComponentInParent<OVRCameraRig>();
+        if (player && isParented)
+        {
+            player.transform.SetParent(null, true);
+            isParented = false;
+            //VRTKCustom_Haptics.instance.StopPulsing();
+        }
     }
 
 

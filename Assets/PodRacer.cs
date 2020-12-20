@@ -9,26 +9,65 @@ public class PodRacer : MonoBehaviour
     public bool isDriving;
     public Transform playerT, drivingSeatT, seat2T;
     public GameObject jet01, jet02;
+    public GameObject light01, light02;
     VRTK_BodyPhysics bodyPhysics;
-    BezierWalkerWithSpeed splineWalker;
+    public BezierSpline racerLine;
     public AudioSource jetsSource, jetsSource2, engineSource;
+    VRTK_InteractableObject interactableObject;
+
+    public bool isMoving;
+    public float m_NormalizedT;
+    public float baseSpeed;
+
+    public float rotationSpeed;
+    public Transform podT;
 
 	private void Awake()
 	{
         bodyPhysics = FindObjectOfType<VRTK_BodyPhysics>();
-        splineWalker = GetComponent<BezierWalkerWithSpeed>();
+        interactableObject = GetComponent<VRTK_InteractableObject>();
     }
-    void Start()
+
+
+	private void OnEnable()
+	{
+		interactableObject.InteractableObjectUsed += InteractableObject_InteractableObjectUsed;
+    }
+    private void OnDisable()
     {
+        interactableObject.InteractableObjectUsed -= InteractableObject_InteractableObjectUsed;
+    }
+
+    private void InteractableObject_InteractableObjectUsed(object sender, InteractableObjectEventArgs e)
+	{
+        if (isMoving) return;
         
+        EnterDriving();
+        PodEventManager.instance.StartRacing();
+	}
+
+	void Start()
+    {
+        light01.SetActive(false);
+        light02.SetActive(false);
+        ActivateJets(false);
+        EnterDriving();
+        PodEventManager.instance.StartRacing();
     }
 
     void Update()
     {
-        if (splineWalker.enabled)
+        if (isMoving)
 		{
-            //bodyPhysics.transform.localPosition = bodyPhysics.transform.localPosition.WithY(Mathf.Sin(Time.time) * 0.05f);
+            Vector3 linePos = racerLine.MoveAlongSpline(ref m_NormalizedT, baseSpeed * Time.deltaTime);
+            transform.position = linePos;
 
+            Vector3 lineForward = racerLine.GetTangent(m_NormalizedT);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(Vector3.ProjectOnPlane(lineForward, Vector3.up)), rotationSpeed);
+
+            float rotNormT = Mathf.Clamp(m_NormalizedT + 0.01f, 0, 1);
+            Vector3 rotForward = racerLine.GetTangent(rotNormT);
+            podT.forward = rotForward;
         }
     }
 
@@ -48,8 +87,9 @@ public class PodRacer : MonoBehaviour
         VRTK_HeadsetFade.instance.Unfade(1);
         FindObjectOfType<VRTK_SlideObjectControlAction>().gameObject.SetActive(false);
         ActivateJets();
+        light01.SetActive(true);
+        light02.SetActive(true);
         isDriving = true;
-        splineWalker.enabled = true;
         jetsSource.Play();
         jetsSource2.Play();
         engineSource.Play();
@@ -57,7 +97,9 @@ public class PodRacer : MonoBehaviour
         BabyYoda.instance.ActivateCarriage();
         babyT.SetParent(seat2T);
         babyT.localPosition = babyT.localEulerAngles = Vector3.zero;
-
+        interactableObject.isUsable = false;
+        GetComponent<Collider>().enabled = false;
+        isMoving = true;
     }
 
 

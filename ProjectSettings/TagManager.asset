@@ -15,6 +15,7 @@ TagManager:
   - TeleportIgnore
   - RightHand
   - LeftHand
+  - PodRacer
   layers:
   - Default
   - TransparentFX
@@ -30,7 +31,7 @@ TagManager:
   - Helmet2
   - RazorCrest
   - Terrain
-  - 
+  - TuskenBiker
   - 
   - 
   - 

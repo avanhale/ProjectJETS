@@ -7,9 +7,9 @@ using UnityEngine.PostProcessing;
 public class GameManager : MonoBehaviour
 {
 	public static GameManager instance;
-	[Range(0, 1)]
-	public float timeScale;
 	public PostProcessingProfile profile;
+	[Range(0,5)]
+	public float timeScale;
 	private void Awake()
 	{
 		instance = this;
@@ -18,8 +18,8 @@ public class GameManager : MonoBehaviour
 
 	private void Update()
 	{
-		Time.timeScale = timeScale;
-
+		if (timeScale == 0) Time.timeScale = 1;
+		else Time.timeScale = timeScale;
 	}
 
 
@@ -52,4 +52,14 @@ public class GameManager : MonoBehaviour
 		profile.grain.enabled = false;
 
 	}
+
+
+
+
+	
+
+
+
+
+
 }

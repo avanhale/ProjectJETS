@@ -13,17 +13,17 @@ public class TuskenBiker : MonoBehaviour
     float startHipsY;
     float curTime;
     public bool isMoving;
+    public Rigidbody raiderBody;
 
     [Header("BikerStats")]
     public BezierSpline bikerLine;
     public float baseSpeed;
-    public AnimationCurve speedCurve;
     public float m_NormalizedT;
     public float currentSpeed;
     public float targetSpeed;
     public float acceleration;
 
-    public AudioSource speederSource, raiderSource;
+    public AudioSource speederSource, raiderSource, deathSource, shortCircuitSFX;
     public float rayLength;
     public LayerMask terrainMask;
     Rigidbody body;
@@ -32,15 +32,31 @@ public class TuskenBiker : MonoBehaviour
     public Vector2[] speedPoints;
     public int currentSpeedPointIndex;
 
+    public Collider bikeCol, bodyCol;
+    public GameObject hitPXGO, shockPXGO;
+
+    public GameObject bulletPrefab;
+    public Transform bulletPointT;
+    public AudioSource fireSource, crashSource;
+
+    float startHipX;
     private void Awake()
 	{
         playerHeadT = PlaySpaceRelativity.cameraT;
         startHipsY = hipsT.localPosition.y;
         body = GetComponent<Rigidbody>();
-        Invoke("StartMoving", Random.Range(1, 3));
+        Physics.IgnoreCollision(bikeCol, bodyCol, true);
+        hitPXGO.SetActive(false);
+        shockPXGO.SetActive(false);
+        startHipX = hipsT.localEulerAngles.x;
     }
 
-    void StartMoving()
+	private void Start()
+	{
+        transform.position = bikerLine.GetPoint(0);
+    }
+
+    public void StartMoving()
 	{
         isMoving = true;
         speederSource.Play();
@@ -53,6 +69,7 @@ public class TuskenBiker : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.C)) if (bulletPrefab != null) Fire();
         if (!isMoving) return;
 
 
@@ -141,7 +158,6 @@ public class TuskenBiker : MonoBehaviour
     {
         if (!isMoving) return;
         curTime += Time.deltaTime;
-
         Vector3 pos = bikerT.transform.localPosition;
         pos.y = Mathf.Sin(curTime * waveSpeed) * waveAmp;
         bikerT.transform.localPosition = pos;
@@ -164,27 +180,99 @@ public class TuskenBiker : MonoBehaviour
         posbody.y = startHipsY + Mathf.Sin(curTime * waveSpeed) * -0.0075f;
         hipsT.localPosition = posbody;
 
-        Vector3 bikeAngles = speederT.localEulerAngles;
-        bikeAngles.x = Mathf.Sin(curTime * waveSpeed *2) * -.5f;
-        speederT.localEulerAngles = bikeAngles;
+		Vector3 bikeAngles = speederT.localEulerAngles;
+		bikeAngles.x = Mathf.Sin(curTime * waveSpeed * 2) * -.5f;
+		speederT.localEulerAngles = bikeAngles;
 
-        Vector3 hipAngles = hipsT.localEulerAngles;
-        hipAngles.x = Mathf.Sin(curTime * waveSpeed * 2) * -.5f;
+		Vector3 hipAngles = hipsT.localEulerAngles;
+        hipAngles.x = startHipX + Mathf.Sin(curTime * waveSpeed * 2) * -.5f;
         hipsT.localEulerAngles = hipAngles;
+        return;
 
 
     }
 
 
-
-
-
-
-
-    public void Damage(int damage)
+    [ContextMenu("Throw")]
+    public void Throw()
 	{
-
+        StartCoroutine(ThrowRoutine());
 	}
+
+    IEnumerator ThrowRoutine()
+	{
+        isMoving = false;
+        body.constraints = RigidbodyConstraints.None;
+        yield return null;
+        body.velocity = transform.forward * currentSpeed;
+        body.angularVelocity = transform.right * currentSpeed;
+
+        raiderBody.transform.SetParent(null);
+        raiderBody.isKinematic = false;
+        raiderBody.useGravity = true;
+        raiderBody.GetComponentInChildren<Collider>().enabled = true;
+        raiderBody.velocity = transform.forward * currentSpeed/2 + Vector3.up * currentSpeed / 3;
+        raiderBody.angularVelocity = transform.right * -currentSpeed/4;
+
+        //Physics.IgnoreCollision(bikeCol, bodyCol, false);
+
+    }
+
+
+    int numHits;
+    public void Damage(int damage, Vector3 hitPoint)
+	{
+        numHits++;
+        if (numHits == 3)
+		{
+            StartCoroutine(HitRoutine(hitPoint));
+            Throw();
+            deathSource.Play();
+            shortCircuitSFX.Play();
+            shockPXGO.SetActive(true);
+        }
+    }
+
+    IEnumerator HitRoutine(Vector3 hitPoint)
+	{
+        hitPXGO.SetActive(true);
+        hitPXGO.transform.position = hitPoint;
+        //hitPXGO.transform.SetParent(null);
+        yield return new WaitForSeconds(5);
+        Destroy(hitPXGO);
+    }
+
+
+
+    [ContextMenu("Fire")]
+    public void Fire()
+	{
+        StartCoroutine(FireRoutine());
+	}
+
+    IEnumerator FireRoutine()
+	{
+        fireSource.pitch = Random.Range(0.8f, 1.2f);
+        GameObject bullet = Instantiate(bulletPrefab, GameObject.Find("Bullets").transform);
+        bullet.transform.position = bulletPointT.position;
+        bullet.transform.forward = Vector3.ProjectOnPlane(bulletPointT.forward, Vector3.up);
+        fireSource.Play();
+
+        yield return null;
+	}
+
+
+	private void OnCollisionEnter(Collision collision)
+	{
+        if (collision.collider.CompareTag("PodRacer"))
+		{
+            if (crashSource.isPlaying) return;
+            crashSource.transform.position = collision.contacts[0].point;
+            crashSource.Play();
+		}
+	}
+
+
 
 
 
