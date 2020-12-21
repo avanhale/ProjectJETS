@@ -13,11 +13,15 @@ public class BabyYoda : MonoBehaviour
     public GameObject carriageGO;
     Animator animator;
 
+    public AudioClip cooing, fussing;
+    public AudioSource mouthSource;
+
     private void Awake()
     {
         instance = this;
         interactableObject = GetComponent<VRTK_InteractableObject>();
         animator = GetComponentInChildren<Animator>();
+        Cooing();
     }
 
     private void OnEnable()
@@ -36,17 +40,12 @@ public class BabyYoda : MonoBehaviour
         animator.SetBool("Floating", false);
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         ActivateCarriage(false);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
 
-    }
 
     private void LateUpdate()
     {
@@ -76,6 +75,16 @@ public class BabyYoda : MonoBehaviour
     }
 
 
+    public void Cooing()
+	{
+        mouthSource.clip = cooing;
+        mouthSource.Play();
+    }
 
+    public void Fussing()
+    {
+        mouthSource.clip = fussing;
+        mouthSource.Play();
+    }
 
 }

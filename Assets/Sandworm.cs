@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityEditor.Animations;
 
 public class Sandworm : MonoBehaviour
 {
@@ -10,12 +11,15 @@ public class Sandworm : MonoBehaviour
     public AudioSource burrowSource, screechSource;
     bool isBurrowing;
     public bool isBIG;
+    public bool useSlam;
     int numHits;
     int targetHits = 2;
     public Transform baseT;
     public float slamDelay;
 
     public AudioSource slamSource;
+    public GameObject smokePXGO;
+    public AnimatorControllerLayer c;
 
     private void Awake()
 	{
@@ -23,26 +27,31 @@ public class Sandworm : MonoBehaviour
         Invoke("StopAnim", .75f);
         anim.transform.localPosition = anim.transform.localPosition.WithY(-3);
         holeT.localPosition = holeT.localPosition.WithY(-1);
+        if (isBIG) smokePXGO.SetActive(false);
     }
 
     [ContextMenu("Reveal")]
     public void Reveal()
-	{
-        anim.transform.DOLocalMoveY(1.5f, isBIG?3.5f: 1.5f).SetEase(Ease.InOutCubic);
-        DOTween.To(() => anim.speed, x => anim.speed = x, isBIG?0.5f:1, 2f);
-        holeT.DOLocalMoveY(0, 1f);
+    {
+        anim.transform.DOLocalMoveY(1.5f, isBIG ? 3.5f : 1.5f).SetEase(Ease.InOutCubic);
+        DOTween.To(() => anim.speed, x => anim.speed = x, isBIG ? 0.6f : 1, 2f);
+        holeT.DOLocalMoveY(0, isBIG ? 3f : 1f);
         burrowSource.Play();
         screechSource.Play();
-        Invoke("LowPitch", isBIG?5.5f: 3.5f);
+        Invoke("LowPitch", isBIG ? 5.75f : 4f);
 
-        if (isBIG) Invoke("Slam", slamDelay);
+        if (isBIG && useSlam)
+        {
+            Invoke("Slam", slamDelay);
+            smokePXGO.SetActive(true);
+        }
     }
 
     [ContextMenu("Slam")]
     public void Slam()
 	{
         DOTween.To(() => anim.speed, x => anim.speed = x, 0, 4f);
-        baseT.DOLocalRotate(Vector3.left * 70, 5f).SetEase(Ease.InQuad);
+        baseT.DOLocalRotate(Vector3.left * 75, 4.8f).SetEase(Ease.InQuad).OnComplete(() => VRTKCustom_Haptics.instance.WormSlam());
         slamSource.gameObject.SetActive(true);
     }
 
@@ -81,6 +90,7 @@ public class Sandworm : MonoBehaviour
     void StopAnim()
 	{
         anim.speed = 0;
+        AnimatorControllerLayer layer;
         //Reveal();
 	}
 

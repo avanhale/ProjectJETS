@@ -42,7 +42,7 @@ public class BikerEvents : MonoBehaviour
 
 	public void TimeSplit01()
 	{
-		TimeSplitter.instance.TimeSplit(0.5f, 1.5f);
+		TimeSplitter.instance.TimeSplit(0.5f, 1.25f);
 	}
 
 

@@ -8,7 +8,8 @@ public class GameManager : MonoBehaviour
 {
 	public static GameManager instance;
 	public PostProcessingProfile profile;
-	[Range(0,5)]
+	public bool useTimeScale;
+	[Range(0,10)]
 	public float timeScale;
 	private void Awake()
 	{
@@ -18,8 +19,14 @@ public class GameManager : MonoBehaviour
 
 	private void Update()
 	{
-		if (timeScale == 0) Time.timeScale = 1;
-		else Time.timeScale = timeScale;
+		if (useTimeScale)
+		{
+			if (timeScale == 0) Time.timeScale = 1;
+			else Time.timeScale = timeScale;
+		}
+		else
+		timeScale = Time.timeScale;
+		
 	}
 
 

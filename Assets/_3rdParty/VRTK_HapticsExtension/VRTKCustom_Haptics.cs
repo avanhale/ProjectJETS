@@ -18,8 +18,8 @@ public class VRTKCustom_Haptics : VRTK.CustomScripts.VRTKCustom_HapticFeedback
     [Header("Sandcrawler Pulse")]
     public Pulse sandcrawlerPulse;
 
-    [Header("MPTurn Pulse")]
-    public Pulse mpTurnPulse;
+    [Header("Worm Slam")]
+    public Pulse wormSlam;
 
     [System.Serializable]
     public struct Pulse
@@ -78,6 +78,7 @@ public class VRTKCustom_Haptics : VRTK.CustomScripts.VRTKCustom_HapticFeedback
         HapticPulse(throwPulseStrong, isRightHand);
     }
 
+
     public void BlasterShot()
     {
         HapticPulse(blasterShot, false);
@@ -89,9 +90,11 @@ public class VRTKCustom_Haptics : VRTK.CustomScripts.VRTKCustom_HapticFeedback
         HapticPulse(grabBlaster, false);
     }
 
-    public void MPTurn()
-	{
-        HapticPulse(mpTurnPulse, false);
+    [ContextMenu("WormSlam")]
+    public void WormSlam()
+    {
+        HapticPulse(wormSlam, true);
+        HapticPulse(wormSlam, false);
     }
 
     public void HapticPulse(Pulse pulse, bool isRightHand)

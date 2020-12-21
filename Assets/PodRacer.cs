@@ -6,6 +6,7 @@ using BezierSolution;
 
 public class PodRacer : MonoBehaviour
 {
+    public static PodRacer instance;
     public bool isDriving;
     public Transform playerT, drivingSeatT, seat2T;
     public GameObject jet01, jet02;
@@ -24,6 +25,7 @@ public class PodRacer : MonoBehaviour
 
 	private void Awake()
 	{
+        instance = this;
         bodyPhysics = FindObjectOfType<VRTK_BodyPhysics>();
         interactableObject = GetComponent<VRTK_InteractableObject>();
     }
@@ -65,9 +67,15 @@ public class PodRacer : MonoBehaviour
             Vector3 lineForward = racerLine.GetTangent(m_NormalizedT);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(Vector3.ProjectOnPlane(lineForward, Vector3.up)), rotationSpeed);
 
-            float rotNormT = Mathf.Clamp(m_NormalizedT + 0.01f, 0, 1);
+            float rotNormT = Mathf.Clamp(m_NormalizedT + 0.005f, 0, 1);
             Vector3 rotForward = racerLine.GetTangent(rotNormT);
             podT.forward = rotForward;
+
+
+
+            seat2T.localPosition = seat2T.localPosition.WithY(2.5f + Mathf.Sin(Time.time) * 0.25f);
+
+
         }
     }
 
@@ -100,6 +108,7 @@ public class PodRacer : MonoBehaviour
         interactableObject.isUsable = false;
         GetComponent<Collider>().enabled = false;
         isMoving = true;
+       // BabyYoda.instance.Fussing();
     }
 
 

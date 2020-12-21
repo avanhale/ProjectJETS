@@ -30,6 +30,7 @@ public class PodEventManager : MonoBehaviour
 		if (!wormRevealed && podRacer.m_NormalizedT > wormTrigger)
 		{
 			sandwormBig.Reveal();
+			Invoke("IncreaseSpeed", 10);
 			wormRevealed = true;
 		}
 
@@ -76,7 +77,10 @@ public class PodEventManager : MonoBehaviour
 	}
 
 
-
+	void IncreaseSpeed()
+	{
+		podRacer.baseSpeed = 25;
+	}
 
 
 }

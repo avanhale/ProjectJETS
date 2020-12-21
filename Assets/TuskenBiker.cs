@@ -40,6 +40,8 @@ public class TuskenBiker : MonoBehaviour
     public AudioSource fireSource, crashSource;
 
     float startHipX;
+    public bool isCaver;
+
     private void Awake()
 	{
         playerHeadT = PlaySpaceRelativity.cameraT;
@@ -118,15 +120,25 @@ public class TuskenBiker : MonoBehaviour
 
 
 
-        transform.position = targetPos;
+        transform.position = isCaver ? XZpos : targetPos;
 
 
         Vector3 angles = transform.localEulerAngles;
         Vector3 lineForward = bikerLine.GetTangent(m_NormalizedT);
-        transform.forward = lineForward;
-        transform.localEulerAngles = transform.localEulerAngles.WithX(angles.x);
-
-        //transform.rotation = Quaternion.LookRotation(bikerLine.GetTangent(m_NormalizedT));
+        if (isCaver)
+        {
+            BezierSpline.PointIndexTuple pointIndexTuple = bikerLine.GetNearestPointIndicesTo(m_NormalizedT);
+            Vector3 lineUp = Vector3.Lerp(
+                bikerLine[pointIndexTuple.index1].rotation * Vector3.up,
+            bikerLine[pointIndexTuple.index2].rotation * Vector3.up,
+            pointIndexTuple.t);
+            transform.rotation = Quaternion.LookRotation(lineForward, lineUp);
+        }
+        else
+        {
+            transform.forward = lineForward;
+            transform.localEulerAngles = transform.localEulerAngles.WithX(angles.x);
+        }
 
 
 
@@ -134,7 +146,7 @@ public class TuskenBiker : MonoBehaviour
 
 	private void FixedUpdate()
 	{
-        if (!isMoving) return;
+        if (!isMoving || isCaver) return;
 
         Ray ray = new Ray(transform.position + Vector3.up, Vector3.down);
         RaycastHit hit;
@@ -210,7 +222,6 @@ public class TuskenBiker : MonoBehaviour
         raiderBody.transform.SetParent(null);
         raiderBody.isKinematic = false;
         raiderBody.useGravity = true;
-        raiderBody.GetComponentInChildren<Collider>().enabled = true;
         raiderBody.velocity = transform.forward * currentSpeed/2 + Vector3.up * currentSpeed / 3;
         raiderBody.angularVelocity = transform.right * -currentSpeed/4;
 
@@ -247,15 +258,28 @@ public class TuskenBiker : MonoBehaviour
     [ContextMenu("Fire")]
     public void Fire()
 	{
-        StartCoroutine(FireRoutine());
+        StartCoroutine(FireRoutine(true));
 	}
 
-    IEnumerator FireRoutine()
+    public void FireAtPlayer()
+	{
+        StartCoroutine(FireRoutine(true));
+    }
+
+    IEnumerator FireRoutine(bool fireAtPlayer)
 	{
         fireSource.pitch = Random.Range(0.8f, 1.2f);
         GameObject bullet = Instantiate(bulletPrefab, GameObject.Find("Bullets").transform);
         bullet.transform.position = bulletPointT.position;
-        bullet.transform.forward = Vector3.ProjectOnPlane(bulletPointT.forward, Vector3.up);
+        Vector3 forward = bulletPointT.forward;
+        if (fireAtPlayer)
+		{
+            Vector3 playerNextPos = PodRacer.instance.racerLine.GetPoint(PodRacer.instance.m_NormalizedT + 0.005f);
+            print(playerNextPos);
+            forward = (playerNextPos - bulletPointT.position).normalized;
+		}
+        bullet.transform.forward = Vector3.ProjectOnPlane(forward, Vector3.up);
+        if (fireAtPlayer)
         fireSource.Play();
 
         yield return null;
@@ -273,6 +297,12 @@ public class TuskenBiker : MonoBehaviour
 	}
 
 
+
+
+    public void Destroy()
+	{
+        Destroy(gameObject);
+	}
 
 
 

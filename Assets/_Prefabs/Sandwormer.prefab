@@ -1050,6 +1050,10 @@ MonoBehaviour:
   burrowSource: {fileID: 4273382879594124914}
   screechSource: {fileID: 4273382878194014707}
   isBIG: 0
+  baseT: {fileID: 0}
+  slamDelay: 0
+  slamSource: {fileID: 0}
+  smokePXGO: {fileID: 0}
 --- !u!82 &4273382879594124914
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1068,7 +1072,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 180
+  Priority: 125
   DopplerLevel: 1
   MinDistance: 3
   MaxDistance: 500

@@ -157,6 +157,11 @@ PrefabInstance:
       propertyPath: baseT
       value: 
       objectReference: {fileID: 8416418488709822008}
+    - target: {fileID: 4273382879594124913, guid: 2970deedcd3119146a50554555df52fb,
+        type: 3}
+      propertyPath: slamDelay
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 4273382879594124914, guid: 2970deedcd3119146a50554555df52fb,
         type: 3}
       propertyPath: MinDistance
