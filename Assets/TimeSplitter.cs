@@ -14,7 +14,7 @@ public class TimeSplitter : MonoBehaviour
 
 	private void Update()
 	{
-		if (Input.GetKeyDown(KeyCode.G)) TimeSplit(0.5f, 1);
+		//if (Input.GetKeyDown(KeyCode.G)) TimeSplit(0.5f, 1);
 	}
 
 	public void TimeSplit(float timeScale, float delay)

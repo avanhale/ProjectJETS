@@ -16,6 +16,7 @@ TagManager:
   - RightHand
   - LeftHand
   - PodRacer
+  - Biker
   layers:
   - Default
   - TransparentFX
@@ -32,7 +33,7 @@ TagManager:
   - RazorCrest
   - Terrain
   - TuskenBiker
-  - 
+  - TuskenBiker2
   - 
   - 
   - 

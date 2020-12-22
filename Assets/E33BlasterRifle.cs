@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using VRTK;
 
 public class E33BlasterRifle : MonoBehaviour
@@ -17,6 +18,15 @@ public class E33BlasterRifle : MonoBehaviour
     public Vector3 offset;
     Light blastLight;
 
+    [Header("Overheater")]
+    public float shotHeat;
+    public float decelRate;
+    public float currentHeat;
+    public Image heatSlider;
+    public bool isOverheated;
+    bool canDecel;
+
+    public AudioSource emptySFX, overheatSFX;
 	private void Awake()
 	{
         interactableObject = GetComponent<VRTK_InteractableObject>();
@@ -43,7 +53,14 @@ public class E33BlasterRifle : MonoBehaviour
 	{
         if (interactableObject.IsGrabbed())
         {
-            FireGun();
+            if (!isOverheated)
+            {
+                FireGun();
+            }
+            else
+			{
+                emptySFX.Play();
+            }
         }
 	}
     private void InteractableObject_InteractableObjectUngrabbed(object sender, InteractableObjectEventArgs e)
@@ -55,9 +72,11 @@ public class E33BlasterRifle : MonoBehaviour
 	private void Update()
 	{
         coll.transform.position = bodyT.TransformPoint(offset);
+        if (!isOverheated && canDecel) DecelHeat();
+        UpdateSlider();
     }
 
-	void FireGun()
+    void FireGun()
 	{
         fireSource.pitch = Random.Range(0.85f, 1.15f);
         fireSource.Play();
@@ -67,6 +86,19 @@ public class E33BlasterRifle : MonoBehaviour
 
         VRTKCustom_Haptics.instance.BlasterShot();
         StartCoroutine(StartLight());
+
+        if (decelRoutine != null) StopCoroutine(decelRoutine);
+        decelRoutine = StartCoroutine(DecelRoutine());
+
+        UpdateHeat();
+    }
+
+    Coroutine decelRoutine;
+    IEnumerator DecelRoutine()
+	{
+        canDecel = false;
+        yield return new WaitForSeconds(0.275f);
+        canDecel = true;
     }
 
 
@@ -84,5 +116,42 @@ public class E33BlasterRifle : MonoBehaviour
         yield return new WaitForSeconds(0.05f);
         blastLight.enabled = false;
     }
+
+
+    void UpdateHeat()
+	{
+        currentHeat = Mathf.Clamp(currentHeat + shotHeat, 0, 1);
+        if (currentHeat >= 1) StartCoroutine(OverHeat());
+    }
+
+    void DecelHeat()
+	{
+        currentHeat = Mathf.Clamp(currentHeat - decelRate * Time.deltaTime, 0, 1);
+    }
+
+    void UpdateSlider()
+	{
+        heatSlider.fillAmount = Mathf.Lerp(0.25f, 1, currentHeat);
+	}
+
+
+    IEnumerator OverHeat()
+	{
+        isOverheated = true;
+        overheatSFX.Play();
+        float overHeatTime = 2.5f;
+        yield return new WaitForSeconds(1);
+        float curTime = 0;
+        while (curTime < overHeatTime)
+        {
+            curTime += Time.deltaTime;
+            currentHeat = 1 - curTime / overHeatTime;
+            UpdateSlider();
+            yield return null;
+        
+        }
+        isOverheated = false;
+	}
+
 
 }

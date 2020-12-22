@@ -169,7 +169,7 @@ namespace VRTK
 
         protected Transform playArea;
         protected Transform headset;
-        protected Rigidbody bodyRigidbody;
+        public Rigidbody bodyRigidbody;
         protected GameObject bodyColliderContainer;
         protected GameObject footColliderContainer;
 

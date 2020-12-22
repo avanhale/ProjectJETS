@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
-using UnityEditor.Animations;
 
 public class Sandworm : MonoBehaviour
 {
@@ -18,8 +17,7 @@ public class Sandworm : MonoBehaviour
     public float slamDelay;
 
     public AudioSource slamSource;
-    public GameObject smokePXGO;
-    public AnimatorControllerLayer c;
+    public GameObject smokePXGO, explosionPXGO;
 
     private void Awake()
 	{
@@ -27,7 +25,11 @@ public class Sandworm : MonoBehaviour
         Invoke("StopAnim", .75f);
         anim.transform.localPosition = anim.transform.localPosition.WithY(-3);
         holeT.localPosition = holeT.localPosition.WithY(-1);
-        if (isBIG) smokePXGO.SetActive(false);
+        if (isBIG)
+        {
+            smokePXGO.SetActive(false);
+            if (!useSlam) explosionPXGO.SetActive(false);
+        }
     }
 
     [ContextMenu("Reveal")]
@@ -35,7 +37,7 @@ public class Sandworm : MonoBehaviour
     {
         anim.transform.DOLocalMoveY(1.5f, isBIG ? 3.5f : 1.5f).SetEase(Ease.InOutCubic);
         DOTween.To(() => anim.speed, x => anim.speed = x, isBIG ? 0.6f : 1, 2f);
-        holeT.DOLocalMoveY(0, isBIG ? 3f : 1f);
+        holeT.DOLocalMoveY(0, isBIG ? 2.75f : 1f);
         burrowSource.Play();
         screechSource.Play();
         Invoke("LowPitch", isBIG ? 5.75f : 4f);
@@ -53,6 +55,7 @@ public class Sandworm : MonoBehaviour
         DOTween.To(() => anim.speed, x => anim.speed = x, 0, 4f);
         baseT.DOLocalRotate(Vector3.left * 75, 4.8f).SetEase(Ease.InQuad).OnComplete(() => VRTKCustom_Haptics.instance.WormSlam());
         slamSource.gameObject.SetActive(true);
+        Invoke("Destroy", 37);
     }
 
 
@@ -90,7 +93,6 @@ public class Sandworm : MonoBehaviour
     void StopAnim()
 	{
         anim.speed = 0;
-        AnimatorControllerLayer layer;
         //Reveal();
 	}
 
@@ -107,6 +109,13 @@ public class Sandworm : MonoBehaviour
             }
 
         }
+	}
+
+
+
+    void Destroy()
+	{
+        baseT.gameObject.SetActive(false);
 	}
 
 

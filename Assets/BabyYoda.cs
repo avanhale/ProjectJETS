@@ -13,8 +13,7 @@ public class BabyYoda : MonoBehaviour
     public GameObject carriageGO;
     Animator animator;
 
-    public AudioClip cooing, fussing;
-    public AudioSource mouthSource;
+    public AudioSource cooingSource, effortsSource;
 
     private void Awake()
     {
@@ -77,14 +76,13 @@ public class BabyYoda : MonoBehaviour
 
     public void Cooing()
 	{
-        mouthSource.clip = cooing;
-        mouthSource.Play();
+        cooingSource.Play();
     }
 
-    public void Fussing()
+    public void Efforts()
     {
-        mouthSource.clip = fussing;
-        mouthSource.Play();
+        cooingSource.Stop();
+        effortsSource.Play();
     }
 
 }

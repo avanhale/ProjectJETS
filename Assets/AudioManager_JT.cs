@@ -9,7 +9,10 @@ public class AudioManager_JT : MonoBehaviour
     public static AudioManager_JT instance;
     public AudioMixer mixer;
     public AudioSource asteroidMetalHit;
-	private void Awake()
+    public AudioSource blasterHit;
+    public AudioSource forceImpact;
+
+    private void Awake()
 	{
         instance = this;
 	}
@@ -55,6 +58,24 @@ public class AudioManager_JT : MonoBehaviour
         mixer.SetFloat("Volume", 0);
 
     }
+
+
+
+
+    public void BlasterHit()
+	{
+        blasterHit.Play();
+	}
+
+
+    public void ForceImpact(Vector3 pos)
+	{
+        forceImpact.transform.position = pos;
+        forceImpact.Play();
+	}
+
+
+
 
 
 }

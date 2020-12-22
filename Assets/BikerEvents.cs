@@ -47,10 +47,17 @@ public class BikerEvents : MonoBehaviour
 
 
 
+	public void HitPlayer()
+	{
+		GameManager.instance.HitIndication();
+	}
 
 
-
-
+	public void DamagePlayer()
+	{
+		GameManager.instance.HitIndication();
+		PodRacer.instance.LoseEngine();
+	}
 
 
 

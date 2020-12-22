@@ -22,6 +22,7 @@ public class PodRacer : MonoBehaviour
 
     public float rotationSpeed;
     public Transform podT;
+    public GameObject smokes;
 
 	private void Awake()
 	{
@@ -55,6 +56,7 @@ public class PodRacer : MonoBehaviour
         ActivateJets(false);
         EnterDriving();
         PodEventManager.instance.StartRacing();
+        FindObjectOfType<Sandcrawler>().StartTrack();
     }
 
     void Update()
@@ -93,7 +95,7 @@ public class PodRacer : MonoBehaviour
         PlaySpaceRelativity.TransformCameraTo(drivingSeatT);
         bodyPhysics.enableBodyCollisions = false;
         VRTK_HeadsetFade.instance.Unfade(1);
-        FindObjectOfType<VRTK_SlideObjectControlAction>().gameObject.SetActive(false);
+        GameManager.instance.mover.SetActive(false);
         ActivateJets();
         light01.SetActive(true);
         light02.SetActive(true);
@@ -107,6 +109,7 @@ public class PodRacer : MonoBehaviour
         babyT.localPosition = babyT.localEulerAngles = Vector3.zero;
         interactableObject.isUsable = false;
         GetComponent<Collider>().enabled = false;
+        JetPack.instance.canJets = false;
         isMoving = true;
        // BabyYoda.instance.Fussing();
     }
@@ -120,7 +123,26 @@ public class PodRacer : MonoBehaviour
         jet02.SetActive(activate);
 	}
 
+    [ContextMenu("DropShip")]
+    public void DropShip()
+	{
+        isMoving = false;
+        Rigidbody body = gameObject.AddComponent<Rigidbody>();
+        body.velocity = Vector3.down * 150f + Vector3.right * 5f;
+        body.angularVelocity = Vector3.back * 1f;
+	}
 
 
+
+
+    [ContextMenu("LoseEngine")]
+    public void LoseEngine()
+	{
+        light02.SetActive(false);
+        jet01.SetActive(false);
+        baseSpeed = 20;
+        smokes.SetActive(true);
+        engineSource.pitch *= 0.8f;
+    }
 
 }

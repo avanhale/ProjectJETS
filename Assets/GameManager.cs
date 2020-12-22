@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using VRTK;
 using UnityEngine.PostProcessing;
+using DG.Tweening;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,18 +12,27 @@ public class GameManager : MonoBehaviour
 	public bool useTimeScale;
 	[Range(0,10)]
 	public float timeScale;
+
+	public Color hitColor;
+
+	public GameObject mover;
+
 	private void Awake()
 	{
 		instance = this;
 		profile.grain.enabled = false;
+
+		VignetteModel.Settings vignette = profile.vignette.settings;
+		vignette.color = Color.black;
+		profile.vignette.settings = vignette;
+
 	}
 
 	private void Update()
 	{
 		if (useTimeScale)
 		{
-			if (timeScale == 0) Time.timeScale = 1;
-			else Time.timeScale = timeScale;
+			Time.timeScale = timeScale;
 		}
 		else
 		timeScale = Time.timeScale;
@@ -62,8 +72,43 @@ public class GameManager : MonoBehaviour
 
 
 
+	[ContextMenu("HitIndication")]
+	public void HitIndication()
+	{
+		StartCoroutine(HitRoutine());
+		AudioManager_JT.instance.BlasterHit();
+	}
 
-	
+
+	IEnumerator HitRoutine()
+	{
+		VignetteModel.Settings vignette = profile.vignette.settings;
+		float lerpTime = 0.5f;
+		float curTime = 0;
+		while (curTime < lerpTime)
+		{
+			curTime += Time.deltaTime;
+			vignette.color = Color.Lerp(Color.black, hitColor, curTime/lerpTime);
+			vignette.intensity = Mathf.Lerp(0.55f, 0.75f, curTime / lerpTime);
+			profile.vignette.settings = vignette;
+			yield return null;
+		}
+
+		yield return new WaitForSeconds(0.25f);
+
+		curTime = 0;
+		lerpTime = 1;
+		while (curTime < lerpTime)
+		{
+			curTime += Time.deltaTime;
+			vignette.color = Color.Lerp(hitColor, Color.black, curTime / lerpTime);
+			vignette.intensity = Mathf.Lerp(0.75f, 0.55f, curTime / lerpTime);
+			profile.vignette.settings = vignette;
+			yield return null;
+		}
+
+	}
+
 
 
 

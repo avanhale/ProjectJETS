@@ -41,6 +41,9 @@ public class TuskenBiker : MonoBehaviour
 
     float startHipX;
     public bool isCaver;
+    public float lineShotStep = 0.005f;
+
+    public int numHitsNeeded;
 
     private void Awake()
 	{
@@ -199,8 +202,17 @@ public class TuskenBiker : MonoBehaviour
 		Vector3 hipAngles = hipsT.localEulerAngles;
         hipAngles.x = startHipX + Mathf.Sin(curTime * waveSpeed * 2) * -.5f;
         hipsT.localEulerAngles = hipAngles;
-        return;
 
+        bool added = false;
+        float angleX = transform.localEulerAngles.x;
+        if (angleX > 180)
+		{
+            added = true;
+            angleX -= 360;
+        }
+        angleX = Mathf.Clamp(angleX, -60, 60);
+        if (added) angleX += 360;
+        transform.localEulerAngles = transform.localEulerAngles.WithX(angleX);
 
     }
 
@@ -234,7 +246,7 @@ public class TuskenBiker : MonoBehaviour
     public void Damage(int damage, Vector3 hitPoint)
 	{
         numHits++;
-        if (numHits == 3)
+        if (numHits == numHitsNeeded)
 		{
             StartCoroutine(HitRoutine(hitPoint));
             Throw();
@@ -270,16 +282,18 @@ public class TuskenBiker : MonoBehaviour
 	{
         fireSource.pitch = Random.Range(0.8f, 1.2f);
         GameObject bullet = Instantiate(bulletPrefab, GameObject.Find("Bullets").transform);
+
         bullet.transform.position = bulletPointT.position;
-        Vector3 forward = bulletPointT.forward;
+        Vector3 forward = Vector3.ProjectOnPlane(bulletPointT.forward, Vector3.up);
+
         if (fireAtPlayer)
-		{
-            Vector3 playerNextPos = PodRacer.instance.racerLine.GetPoint(PodRacer.instance.m_NormalizedT + 0.005f);
-            print(playerNextPos);
+        {
+            Vector3 playerNextPos = PodRacer.instance.racerLine.GetPoint(PodRacer.instance.m_NormalizedT + lineShotStep);
             forward = (playerNextPos - bulletPointT.position).normalized;
-		}
-        bullet.transform.forward = Vector3.ProjectOnPlane(forward, Vector3.up);
-        if (fireAtPlayer)
+        }
+
+        bullet.transform.forward = forward;
+
         fireSource.Play();
 
         yield return null;

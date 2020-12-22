@@ -15,7 +15,7 @@ public class AmbientLighter : MonoBehaviour
 	}
 
 	[ContextMenu("Normal")]
-	public void Normal()
+	public void Light()
 	{
 		DOTween.To(() => RenderSettings.ambientLight, x => RenderSettings.ambientLight = x, normalColor, 2);
 	}

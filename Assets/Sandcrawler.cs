@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using BezierSolution;
 
 public class Sandcrawler : MonoBehaviour
 {
@@ -8,12 +9,17 @@ public class Sandcrawler : MonoBehaviour
 	public Transform tracksT;
     Vector3 startPos;
     Animator anim;
+    BezierWalkerWithSpeed walker;
 
     public bool isMoving;
+    public float lerpStartPodRacer;
+
+    public Transform crawlerPointT;
 
 	private void Awake()
 	{
         anim = GetComponentInChildren<Animator>();
+        walker = GetComponent<BezierWalkerWithSpeed>();
         Close();
 
     }
@@ -25,14 +31,39 @@ public class Sandcrawler : MonoBehaviour
 
     void Update()
     {
-        if (!isMoving) return;
+
+        if (isMoving)
+        {
+            transform.position += transform.forward * moveSpeed * Time.deltaTime;
+        }
+
+        if (isMoving || isTracking)
+        {
+            Vector3 pos = tracksT.localPosition;
+            pos.z = startPos.z + Mathf.Sin(Time.time * 2) * 0.25f;
+            tracksT.localPosition = pos;
+        }
 
 
-        transform.position += transform.forward * moveSpeed * Time.deltaTime;
 
-        Vector3 pos = tracksT.localPosition;
-        pos.z = startPos.z + Mathf.Sin(Time.time * 2) * 0.25f;
-        tracksT.localPosition = pos;
+
+
+        if (isTracking)
+		{
+            if (Vector3.Distance(transform.position, crawlerPointT.position) > 1)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, crawlerPointT.position, moveSpeed * Time.deltaTime);
+                transform.rotation = Quaternion.RotateTowards(transform.rotation, crawlerPointT.rotation, 2 * Time.deltaTime);
+            }
+            else
+            {
+                isTracking = false;
+                Open();
+            }
+		}
+
+
+
     }
 
     public void StartMoving()
@@ -51,7 +82,6 @@ public class Sandcrawler : MonoBehaviour
     public void Close()
 	{
         anim.SetBool("isClosed", true);
-        Invoke("StartMoving", 5);
     }
 
 
@@ -78,6 +108,20 @@ public class Sandcrawler : MonoBehaviour
         }
     }
 
+    public void StartTrack()
+	{
+        walker.NormalizedT = lerpStartPodRacer;
+        walker.enabled = true;
+        isMoving = false;
+    }
+
+    bool isTracking;
+    public void StopTrack()
+	{
+        walker.enabled = false;
+        isMoving = false;
+        isTracking = true;
+    }
 
 
 }

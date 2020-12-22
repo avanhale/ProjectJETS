@@ -63,9 +63,9 @@ public class BlasterBullet : MonoBehaviour
                 StartCoroutine(HitTargetRoutine(hit.point));
             }
 
-            TuskenBiker tuskenBiker = hit.collider.GetComponentInParent<TuskenBiker>();
-            if (tuskenBiker)
+            if (hit.collider.CompareTag("Biker"))
 			{
+                TuskenBiker tuskenBiker = hit.collider.GetComponentInParent<TuskenBiker>();
                 print("hit tusken biker");
                 tuskenBiker.Damage(damage, hit.point);
                 StartCoroutine(HitTargetRoutine(hit.point));

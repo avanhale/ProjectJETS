@@ -5,6 +5,7 @@ using VRTK;
 
 public class JetPack : MonoBehaviour
 {
+    public static JetPack instance;
     public VRTK_ControllerEvents controller;
     public VRTK_ControllerEvents.ButtonAlias actionButton = VRTK_ControllerEvents.ButtonAlias.ButtonTwoPress;
     VRTK_BodyPhysics body;
@@ -16,11 +17,17 @@ public class JetPack : MonoBehaviour
     public float jetForce;
 
     public bool isJetting;
+    public bool canJets;
 
-	private void Awake()
+    public delegate void JetPackPressed();
+    public static event JetPackPressed OnJetPackPressed;
+
+    private void Awake()
 	{
+        if (!isShipJets) instance = this;
         body = FindObjectOfType<VRTK_BodyPhysics>();
         source = GetComponent<AudioSource>();
+        canJets = true;
     }
 
 	private void OnEnable()
@@ -38,7 +45,8 @@ public class JetPack : MonoBehaviour
     }
     private void Controller_JetPackButtonPressed(object sender, ControllerInteractionEventArgs e)
     {
-        ToggleJets();
+        if (canJets) ToggleJets();
+        OnJetPackPressed?.Invoke();
     }
 
     private void Controller_JetPackButtonUnPressed(object sender, ControllerInteractionEventArgs e)
@@ -48,11 +56,11 @@ public class JetPack : MonoBehaviour
 
     void Update()
     {
-        if (isShipJets) return;
+        if (isShipJets || tempSpeed) return;
 
         if (isJetting)
 		{
-            body.ApplyBodyVelocity(Vector3.up * jetForce, true);
+            body.ApplyBodyVelocity(Vector3.up * jetForce, true, true);
 
         }
     }
@@ -61,23 +69,29 @@ public class JetPack : MonoBehaviour
 	{
         if (isJetting) EndJets();
         else StartJets();
-	}
+
+    }
 
     public void StartJets()
 	{
         isJetting = true;
+        Jets();
+    }
+
+    public void Jets()
+	{
         if (startJetsRoutine != null) StopCoroutine(startJetsRoutine);
         startJetsRoutine = StartCoroutine(StartJetsRoutine());
     }
 
-    Coroutine startJetsRoutine;
+    public Coroutine startJetsRoutine;
     IEnumerator StartJetsRoutine()
 	{
         source.clip = jetStart;
         source.loop = false;
         source.Play();
         yield return new WaitForSeconds(jetStart.length);
-        if (isJetting)
+        if (isJetting || !canJets)
 		{
             source.clip = jetMid;
             source.Play();
@@ -93,6 +107,11 @@ public class JetPack : MonoBehaviour
         source.Play();
     }
 
+    bool tempSpeed;
+    public void SetTempSpeed(bool temp)
+	{
+        tempSpeed = temp;
+    }
 
 
 }
