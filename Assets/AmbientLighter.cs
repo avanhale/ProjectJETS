@@ -8,6 +8,7 @@ public class AmbientLighter : MonoBehaviour
 	public static AmbientLighter instance;
 	Color normalColor;
 	public Color darkColor;
+	public Color cantinaColor;
 	private void Awake()
 	{
 		instance = this;
@@ -24,6 +25,13 @@ public class AmbientLighter : MonoBehaviour
 	public void Dark()
 	{
 		DOTween.To(() => RenderSettings.ambientLight, x => RenderSettings.ambientLight = x, darkColor, 2);
+	}
+
+
+	[ContextMenu("Cantina")]
+	public void Cantina()
+	{
+		DOTween.To(() => RenderSettings.ambientLight, x => RenderSettings.ambientLight = x, cantinaColor, 2);
 	}
 
 }

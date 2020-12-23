@@ -10,12 +10,15 @@ public class WhistlingBirds : MonoBehaviour
     WhistlingBird[] birds;
 	bool hasFired;
 	public GameObject colliderGO;
+	public GameObject smokePX;
+
+	public MeshRenderer[] lights;
 	private void Awake()
 	{
 		instance = this;
 		birds = GetComponentsInChildren<WhistlingBird>();
 		InitializeRockets();
-		colliderGO.SetActive(false);
+		//colliderGO.SetActive(false);
 
 	}
 
@@ -36,8 +39,25 @@ public class WhistlingBirds : MonoBehaviour
 	[ContextMenu("ShootRockets")]
 	public void ActivateRockets()
 	{
-		StartCoroutine(ShootBirds());
+		StartCoroutine(BirdsRoutine());
 		hasFired = true;
+	}
+
+	IEnumerator BirdsRoutine()
+	{
+		smokePX.SetActive(true);
+		yield return ShootBirds();
+		yield return new WaitForSeconds(0.5f);
+		AmbientLighter.instance.Cantina();
+		foreach (var mesh in lights)
+		{
+			Material mat = mesh.material;
+			mat.DisableKeyword("_EMISSION");
+			mat.globalIlluminationFlags = MaterialGlobalIlluminationFlags.EmissiveIsBlack;
+			mat.SetColor("_EmissionColor", Color.black);
+		}
+		colliderGO.SetActive(false);
+
 	}
 
 	IEnumerator ShootBirds()
@@ -45,6 +65,7 @@ public class WhistlingBirds : MonoBehaviour
 		float delay = 0.5f;
 		foreach (var bird in birds)
 		{
+			VRTKCustom_Haptics.instance.BirdBuzz();
 			bird.Activate();
 			yield return new WaitForSeconds(delay);
 			delay *= 0.7f;

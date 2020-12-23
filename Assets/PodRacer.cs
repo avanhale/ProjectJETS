@@ -54,8 +54,8 @@ public class PodRacer : MonoBehaviour
         light01.SetActive(false);
         light02.SetActive(false);
         ActivateJets(false);
-        EnterDriving();
-        PodEventManager.instance.StartRacing();
+        //EnterDriving();
+       // PodEventManager.instance.StartRacing();
         FindObjectOfType<Sandcrawler>().StartTrack();
     }
 

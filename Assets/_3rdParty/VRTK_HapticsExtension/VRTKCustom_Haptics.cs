@@ -21,6 +21,9 @@ public class VRTKCustom_Haptics : VRTK.CustomScripts.VRTKCustom_HapticFeedback
     [Header("Worm Slam")]
     public Pulse wormSlam;
 
+    [Header("Bird Buzz")]
+    public Pulse birdBuzz;
+
     [System.Serializable]
     public struct Pulse
     {
@@ -55,6 +58,12 @@ public class VRTKCustom_Haptics : VRTK.CustomScripts.VRTKCustom_HapticFeedback
         yield return new WaitForSeconds(2);
         HapticPulse(hyperSpacePulse, true);
         HapticPulse(hyperSpacePulse, false);
+    }
+
+    [ContextMenu("BirdBuzz")]
+    public void BirdBuzz()
+    {
+        HapticPulse(birdBuzz, false);
     }
 
     [ContextMenu("Sandcrawler")]
