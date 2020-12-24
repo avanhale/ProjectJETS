@@ -4812,6 +4812,7 @@ MonoBehaviour:
   hitPXGO: {fileID: 9116599840749834567}
   isMoving: 0
   isTusken: 1
+  isTrooper: 0
 --- !u!1 &4570310543847178205
 GameObject:
   m_ObjectHideFlags: 0

@@ -74,7 +74,6 @@ public class TuskenBiker : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.C)) if (bulletPrefab != null) Fire();
         if (!isMoving) return;
 
 

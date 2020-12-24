@@ -77,6 +77,7 @@ public class GameManager : MonoBehaviour
 	{
 		StartCoroutine(HitRoutine());
 		AudioManager_JT.instance.BlasterHit();
+		VRTKCustom_Haptics.instance.Hit();
 	}
 
 

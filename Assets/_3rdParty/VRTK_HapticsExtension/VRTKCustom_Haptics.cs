@@ -99,6 +99,13 @@ public class VRTKCustom_Haptics : VRTK.CustomScripts.VRTKCustom_HapticFeedback
         HapticPulse(grabBlaster, false);
     }
 
+    [ContextMenu("Hit")]
+    public void Hit()
+    {
+        HapticPulse(grabBlaster, false);
+        HapticPulse(grabBlaster, true);
+    }
+
     [ContextMenu("WormSlam")]
     public void WormSlam()
     {

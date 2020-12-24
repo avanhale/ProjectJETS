@@ -11,6 +11,8 @@ public class BlasterBullet : MonoBehaviour
 
     public bool isMoving;
     public bool isTusken;
+    public bool isTrooper;
+    StormTrooper trooper;
     Light light;
 
 	private void Awake()
@@ -19,6 +21,11 @@ public class BlasterBullet : MonoBehaviour
         hitPXGO.SetActive(false);
         light = GetComponentInChildren<Light>();
     }
+
+    public void SetTrooper(StormTrooper st)
+	{
+        trooper = st;
+	}
 
 	private void Start()
 	{
@@ -41,10 +48,20 @@ public class BlasterBullet : MonoBehaviour
 
     void ToBlaster(bool isS)
 	{
-        E33BlasterRifle blaster = FindObjectOfType<E33BlasterRifle>();
-        transform.position = blaster.bulletPointT.position;
-        transform.rotation = blaster.bulletPointT.rotation;
+        if (isTrooper)
+		{
+            transform.position = trooper.gunPointT.position;
+            transform.rotation = trooper.gunPointT.rotation;
+        }
+        else
+		{
+            E33BlasterRifle blaster = FindObjectOfType<E33BlasterRifle>();
+            transform.position = blaster.bulletPointT.position;
+            transform.rotation = blaster.bulletPointT.rotation;
+        }
+
         if (isS) hasMovedS = true; else hasMovedU = true;
+
     }
 
     private void FixedUpdate()
@@ -55,21 +72,29 @@ public class BlasterBullet : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, bulletLength))
 		{
-            StormTrooper trooper = hit.collider.GetComponentInParent<StormTrooper>();
-            if (trooper)
+            if (!isTrooper)
             {
-                print("hit trooper");
-                trooper.Damage(damage);
-                StartCoroutine(HitTargetRoutine(hit.point));
+                StormTrooper trooper = hit.collider.GetComponentInParent<StormTrooper>();
+                if (trooper)
+                {
+                    print("hit trooper");
+                    trooper.Damage(damage, hit.point);
+                    StartCoroutine(HitTargetRoutine(hit.point));
+                }
             }
-
-            if (hit.collider.CompareTag("Biker"))
-			{
+            else if (hit.collider.CompareTag("Biker"))
+            {
                 TuskenBiker tuskenBiker = hit.collider.GetComponentInParent<TuskenBiker>();
                 print("hit tusken biker");
                 tuskenBiker.Damage(damage, hit.point);
                 StartCoroutine(HitTargetRoutine(hit.point));
             }
+
+            OVRCameraRig player = hit.collider.GetComponentInParent<OVRCameraRig>();
+            if (player && isTrooper)
+			{
+                GameManager.instance.HitIndication();
+			}
 
 
 

@@ -19,6 +19,7 @@ public class E33BlasterRifle : MonoBehaviour
     Light blastLight;
 
     [Header("Overheater")]
+    public bool useOverheat;
     public float shotHeat;
     public float decelRate;
     public float currentHeat;
@@ -120,6 +121,8 @@ public class E33BlasterRifle : MonoBehaviour
 
     void UpdateHeat()
 	{
+        if (!useOverheat) return;
+
         currentHeat = Mathf.Clamp(currentHeat + shotHeat, 0, 1);
         if (currentHeat >= 1) StartCoroutine(OverHeat());
     }
