@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using VRTK;
-using UnityEngine.PostProcessing;
+//using UnityEngine.PostProcessing;
 using DG.Tweening;
 
 public class GameManager : MonoBehaviour
 {
 	public static GameManager instance;
-	public PostProcessingProfile profile;
+	//public PostProcessingProfile profile;
 	public bool useTimeScale;
-	[Range(0,10)]
+	[Range(0, 10)]
 	public float timeScale;
 
 	public Color hitColor;
@@ -20,11 +20,11 @@ public class GameManager : MonoBehaviour
 	private void Awake()
 	{
 		instance = this;
-		profile.grain.enabled = false;
+		//profile.grain.enabled = false;
 
-		VignetteModel.Settings vignette = profile.vignette.settings;
-		vignette.color = Color.black;
-		profile.vignette.settings = vignette;
+		//VignetteModel.Settings vignette = profile.vignette.settings;
+		//vignette.color = Color.black;
+		//profile.vignette.settings = vignette;
 
 	}
 
@@ -35,8 +35,8 @@ public class GameManager : MonoBehaviour
 			Time.timeScale = timeScale;
 		}
 		else
-		timeScale = Time.timeScale;
-		
+			timeScale = Time.timeScale;
+
 	}
 
 
@@ -52,21 +52,22 @@ public class GameManager : MonoBehaviour
 
 	IEnumerator GrainShifter()
 	{
-		profile.grain.enabled = true;
+		//profile.grain.enabled = true;
 
-		float timer = 0;
-		while (timer < 5)
-		{
-			timer += Time.deltaTime;
-			float lerp = (float)(timer / 5f);
-			GrainModel.Settings settings = profile.grain.settings;
-			settings.intensity = 1 * lerp;
-			profile.grain.settings = settings;
+		//float timer = 0;
+		//while (timer < 5)
+		//{
+		//	timer += Time.deltaTime;
+		//	float lerp = (float)(timer / 5f);
+		//	GrainModel.Settings settings = profile.grain.settings;
+		//	settings.intensity = 1 * lerp;
+		//	profile.grain.settings = settings;
 
-			yield return null;
-		}
+		//	yield return null;
+		//}
 
-		profile.grain.enabled = false;
+		//profile.grain.enabled = false;
+		yield return null;
 
 	}
 
@@ -83,15 +84,15 @@ public class GameManager : MonoBehaviour
 
 	IEnumerator HitRoutine()
 	{
-		VignetteModel.Settings vignette = profile.vignette.settings;
+		//VignetteModel.Settings vignette = profile.vignette.settings;
 		float lerpTime = 0.5f;
 		float curTime = 0;
 		while (curTime < lerpTime)
 		{
 			curTime += Time.deltaTime;
-			vignette.color = Color.Lerp(Color.black, hitColor, curTime/lerpTime);
-			vignette.intensity = Mathf.Lerp(0.55f, 0.75f, curTime / lerpTime);
-			profile.vignette.settings = vignette;
+			//vignette.color = Color.Lerp(Color.black, hitColor, curTime/lerpTime);
+			//vignette.intensity = Mathf.Lerp(0.55f, 0.75f, curTime / lerpTime);
+			//profile.vignette.settings = vignette;
 			yield return null;
 		}
 
@@ -102,9 +103,9 @@ public class GameManager : MonoBehaviour
 		while (curTime < lerpTime)
 		{
 			curTime += Time.deltaTime;
-			vignette.color = Color.Lerp(hitColor, Color.black, curTime / lerpTime);
-			vignette.intensity = Mathf.Lerp(0.75f, 0.55f, curTime / lerpTime);
-			profile.vignette.settings = vignette;
+			//vignette.color = Color.Lerp(hitColor, Color.black, curTime / lerpTime);
+			//vignette.intensity = Mathf.Lerp(0.75f, 0.55f, curTime / lerpTime);
+			//profile.vignette.settings = vignette;
 			yield return null;
 		}
 

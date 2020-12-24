@@ -27,8 +27,8 @@ public class RazorCrest : MonoBehaviour
         body.maxAngularVelocity = 100f;
         anim = GetComponentInChildren<Animator>();
         walker = GetComponent<BezierWalkerWithSpeed>();
-        //Landing();
-        Driving();
+        Landing();
+        //Driving();
     }
 
 	private void OnEnable()
