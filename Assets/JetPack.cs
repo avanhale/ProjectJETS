@@ -63,6 +63,22 @@ public class JetPack : MonoBehaviour
             body.ApplyBodyVelocity(Vector3.up * jetForce, true, true);
 
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 
     public void ToggleJets()

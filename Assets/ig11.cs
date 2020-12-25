@@ -73,6 +73,21 @@ public class ig11 : MonoBehaviour
 		eyeSpeed = Random.Range(-10, 10);
 	}
 
+	[ContextMenu("CantinaEvent")]
+	public void CantinaEvent()
+	{
+		sfx01.Play();
+	}
+
+	//IEnumerator EventRoutine()
+	//{
+	//	sfx01.Play();
+	//	yield return new WaitForSeconds(sfx01.clip.length);
+	//	yield return new WaitForSeconds(2);
+	//	DangerMode();
+	//}
+
+
 
 	public bool isDanger;
 	[ContextMenu("DangerMode")]

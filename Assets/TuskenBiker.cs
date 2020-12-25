@@ -44,6 +44,7 @@ public class TuskenBiker : MonoBehaviour
     public float lineShotStep = 0.005f;
 
     public int numHitsNeeded;
+    GameObject bikerGO;
 
     private void Awake()
 	{
@@ -54,6 +55,8 @@ public class TuskenBiker : MonoBehaviour
         hitPXGO.SetActive(false);
         shockPXGO.SetActive(false);
         startHipX = hipsT.localEulerAngles.x;
+        bikerGO = transform.GetChild(0).gameObject;
+        bikerGO.SetActive(false);
     }
 
 	private void Start()
@@ -63,6 +66,7 @@ public class TuskenBiker : MonoBehaviour
 
     public void StartMoving()
 	{
+        bikerGO.SetActive(true);
         isMoving = true;
         speederSource.Play();
         raiderSource.Play();
@@ -71,11 +75,16 @@ public class TuskenBiker : MonoBehaviour
 
     Vector3? currentGroundPos;
     Vector3? currentGroundNorm;
+    bool finished;
 
     void Update()
     {
         if (!isMoving) return;
-
+        if (!finished && m_NormalizedT > 0.99f)
+		{
+            bikerGO.SetActive(false);
+            finished = true;
+		}
 
         // Handle Speed
         if (currentSpeedPointIndex < speedPoints.Length)

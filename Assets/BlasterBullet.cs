@@ -72,6 +72,18 @@ public class BlasterBullet : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, bulletLength))
 		{
+
+            if (hit.collider.gameObject.layer == LayerMask.NameToLayer("NavMesh")
+                || hit.collider.CompareTag("Rock")
+                || hit.collider.gameObject.layer == LayerMask.NameToLayer("Terrain"))
+			{
+                Destroy();
+                return;
+			}
+
+
+
+
             if (!isTrooper)
             {
                 StormTrooper trooper = hit.collider.GetComponentInParent<StormTrooper>();
@@ -82,7 +94,8 @@ public class BlasterBullet : MonoBehaviour
                     StartCoroutine(HitTargetRoutine(hit.point));
                 }
             }
-            else if (hit.collider.CompareTag("Biker"))
+            
+            if (hit.collider.CompareTag("Biker"))
             {
                 TuskenBiker tuskenBiker = hit.collider.GetComponentInParent<TuskenBiker>();
                 print("hit tusken biker");

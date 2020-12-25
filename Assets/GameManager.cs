@@ -2,30 +2,46 @@
 using System.Collections.Generic;
 using UnityEngine;
 using VRTK;
-//using UnityEngine.PostProcessing;
+using UnityEngine.Rendering.PostProcessing;
 using DG.Tweening;
 
 public class GameManager : MonoBehaviour
 {
 	public static GameManager instance;
-	//public PostProcessingProfile profile;
+	public PostProcessProfile profile;
+	public PostProcessProfile targetProfile;
 	public bool useTimeScale;
 	[Range(0, 10)]
 	public float timeScale;
+
+	public Material tatooineSky, spaceSky;
+
+	public GameObject tatooineGO, moonGO;
+	public Transform JTLanding, RCLanding;
 
 	public Color hitColor;
 
 	public GameObject mover;
 
+	public ig11 eyegee;
+
+	public StormTrooper cantinaTrooper;
+	public Transform stormTroopersT;
+	public ImpDropShip dropShip;
+	public GameObject targeter;
+	public facer face;
+
+	public GameObject bodyCol;
+
 	private void Awake()
 	{
 		instance = this;
-		//profile.grain.enabled = false;
+		targeter.SetActive(false);
+	}
 
-		//VignetteModel.Settings vignette = profile.vignette.settings;
-		//vignette.color = Color.black;
-		//profile.vignette.settings = vignette;
-
+	private void Start()
+	{
+		StartCoroutine(StartGame());
 	}
 
 	private void Update()
@@ -39,37 +55,59 @@ public class GameManager : MonoBehaviour
 
 	}
 
+	IEnumerator StartGame()
+	{
+
+		yield return null;
+		VRTK_HeadsetFade.instance.Fade(Color.black, 0);
+		yield return new WaitForSeconds(5);
+		tatooineGO.SetActive(false);
+
+		VRTK_HeadsetFade.instance.Unfade(1);
+		// RC delay
+		yield return new WaitForSeconds(75);
+		RazorCrest.instance.Starting();
+
+	}
+
 
 	[ContextMenu("HyperSpace")]
 	public void HyperSpaceHit()
 	{
 		print("HyperSpace!");
+		StartCoroutine(PlanetShifter());
+	}
+
+	IEnumerator PlanetShifter()
+	{
 		VRTK_HeadsetFade.instance.Fade(Color.white, 5);
 		AudioManager_JT.instance.HyperSpace();
-		StartCoroutine(GrainShifter());
 		VRTKCustom_Haptics.instance.HyperSpace();
+		yield return new WaitForSeconds(5);
+		RenderSettings.fog = true;
+		RenderSettings.skybox = tatooineSky;
+		moonGO.SetActive(false);
+		tatooineGO.SetActive(true);
+		GetComponent<PostProcessVolume>().profile = profile;
+		yield return new WaitForSeconds(7);
+
+		RazorCrest.instance.ExitDrivingSeat();
+		RazorCrest.instance.Landing();
+		yield return new WaitForSeconds(2);
+		Transform t = RazorCrest.instance.transform;
+		t.position = RCLanding.position;
+		t.rotation = RCLanding.rotation;
+
+		Transform p = PlaySpaceRelativity.transformT;
+		p.position = JTLanding.position;
+		p.rotation = JTLanding.rotation;
+		VRTK_HeadsetFade.instance.Unfade(5);
+
+
+
+
 	}
 
-	IEnumerator GrainShifter()
-	{
-		//profile.grain.enabled = true;
-
-		//float timer = 0;
-		//while (timer < 5)
-		//{
-		//	timer += Time.deltaTime;
-		//	float lerp = (float)(timer / 5f);
-		//	GrainModel.Settings settings = profile.grain.settings;
-		//	settings.intensity = 1 * lerp;
-		//	profile.grain.settings = settings;
-
-		//	yield return null;
-		//}
-
-		//profile.grain.enabled = false;
-		yield return null;
-
-	}
 
 
 
@@ -112,7 +150,117 @@ public class GameManager : MonoBehaviour
 	}
 
 
+	public void CantinaEvent()
+	{
+		StartCoroutine(CantinaRoutine());
+	}
 
+	IEnumerator CantinaRoutine()
+	{
+		BoKatanHelmet.instance.AllowGrab();
+		yield return new WaitForSeconds(2);
+		eyegee.CantinaEvent();
+
+	}
+
+	public void CantinaEvent2()
+	{
+		StartCoroutine(CantinaRoutine2());
+	}
+
+	IEnumerator CantinaRoutine2()
+	{
+		yield return new WaitForSeconds(2.75f);
+		eyegee.DangerMode();
+		yield return new WaitForSeconds(2.75f);
+		cantinaTrooper.StartCantinaRoutine();
+
+		yield return new WaitForSeconds(10f);
+		WhistlingBirds.instance.CanShoot();
+	}
+
+	public void Bloom(bool bloom)
+	{
+		Bloom b;
+		profile.TryGetSettings<Bloom>(out b);
+		b.enabled.Override(bloom);
+	}
+
+
+
+
+	[ContextMenu("FireScene")]
+	public void StartFireScene()
+	{
+		foreach (var trooper in stormTroopersT.GetComponentsInChildren<StormTrooper>())
+		{
+			trooper.StartFireScene();
+		}
+
+		dropShip.EnableShip();
+		StartCoroutine(TroopChecker());
+		bodyCol.SetActive(true);
+	}
+
+	IEnumerator TroopChecker()
+	{
+		yield return new WaitForSeconds(5);
+
+		while (!AllDead())
+		{
+			yield return new WaitForSeconds(2);
+		}
+
+		bool AllDead()
+		{
+			foreach (var trooper in stormTroopersT.GetComponentsInChildren<StormTrooper>())
+			{
+				if (!trooper.isDead) return false;
+			}
+			return true;
+		}
+		EndFireScene();
+	}
+
+
+	public void EndFireScene()
+	{
+		Invoke("StartImpShip", 5);
+	}
+
+
+
+	[ContextMenu("IMpShip")]
+	public void StartImpShip()
+	{
+		dropShip.StartFly();
+		targeter.SetActive(true);
+		GetComponent<PostProcessVolume>().profile = targetProfile;
+	}
+
+
+	public void EndGame()
+	{
+		StartCoroutine(EndGamer());
+	}
+
+	IEnumerator EndGamer()
+	{
+		targeter.gameObject.SetActive(false);
+		face.Activate();
+		yield return new WaitForSeconds(7);
+		AudioSource music = GetComponent<AudioSource>();
+		music.volume = 0;
+		music.DOFade(1, 10);
+		music.Play();
+		VRTK_HeadsetFade.instance.Fade(Color.black, 5);
+
+	}
+
+	public void SetProfile()
+	{
+		GetComponent<PostProcessVolume>().profile = profile;
+	}
 
 
 

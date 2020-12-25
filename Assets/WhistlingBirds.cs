@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class WhistlingBirds : MonoBehaviour
 {
-
 	public static WhistlingBirds instance;
 	public Transform cantinaT;
     WhistlingBird[] birds;
@@ -18,7 +17,7 @@ public class WhistlingBirds : MonoBehaviour
 		instance = this;
 		birds = GetComponentsInChildren<WhistlingBird>();
 		InitializeRockets();
-		//colliderGO.SetActive(false);
+		colliderGO.SetActive(false);
 
 	}
 
@@ -46,6 +45,7 @@ public class WhistlingBirds : MonoBehaviour
 	IEnumerator BirdsRoutine()
 	{
 		smokePX.SetActive(true);
+		colliderGO.SetActive(false);
 		yield return ShootBirds();
 		yield return new WaitForSeconds(0.5f);
 		AmbientLighter.instance.Cantina();
@@ -56,13 +56,13 @@ public class WhistlingBirds : MonoBehaviour
 			mat.globalIlluminationFlags = MaterialGlobalIlluminationFlags.EmissiveIsBlack;
 			mat.SetColor("_EmissionColor", Color.black);
 		}
-		colliderGO.SetActive(false);
-
+		yield return new WaitForSeconds(1f);
+		GameManager.instance.StartFireScene();
 	}
 
 	IEnumerator ShootBirds()
 	{
-		float delay = 0.5f;
+		float delay = 0.45f;
 		foreach (var bird in birds)
 		{
 			VRTKCustom_Haptics.instance.BirdBuzz();

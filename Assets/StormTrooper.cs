@@ -6,7 +6,9 @@ using DG.Tweening;
 
 public class StormTrooper : MonoBehaviour
 {
-    AudioSource source;
+    public AudioSource damageSource;
+	public AudioSource standDown, disarm;
+    public AudioSource walking;
 	NavMeshAgent agent;
 	public Transform targetT;
 	Animator anim;
@@ -31,14 +33,25 @@ public class StormTrooper : MonoBehaviour
 
 	Quaternion? spineRot;
 
+	float velY, velX;
+	Quaternion startSpineLocalRot;
+
+	public bool isCantina;
+
+	public Transform targetCT;
+	GameObject trooperGO;
+
+
 	private void Awake()
 	{
 		playerCamT = PlaySpaceRelativity.cameraT;
-		source = GetComponentInChildren<AudioSource>();
 		agent = GetComponent<NavMeshAgent>();
 		anim = GetComponentInChildren<Animator>();
 		bulletsT = GameObject.Find("Bullets").transform;
+		trooperGO = transform.GetChild(0).gameObject;
+		trooperGO.SetActive(false);
 	}
+
 	void OnAnimatorMove()
 	{
 		// Update position based on animation movement using navigation surface height
@@ -61,7 +74,15 @@ public class StormTrooper : MonoBehaviour
 	private void Start()
 	{
 		agent.updatePosition = false;
-		StartCoroutine(MasterRoutine());
+		//StartFireScene();
+		startSpineLocalRot = spineT.localRotation;
+
+		if (isCantina)
+		{
+			//StartCoroutine(CantinaRoutine());
+		}
+
+		StartCoroutine(WalkingRoutine());
 	}
 
 	private void Update()
@@ -100,8 +121,10 @@ public class StormTrooper : MonoBehaviour
 			//anim.SetFloat("vely", velocity.y);
 			float forwardLerp = Mathf.InverseLerp(0, 4, velocity.y) * Mathf.Sign(velocity.y);
 			float sideLerp = Mathf.InverseLerp(0, 4, velocity.x) * Mathf.Sign(velocity.x);
-			anim.SetFloat("Forward", forwardLerp);
-			anim.SetFloat("Side", sideLerp);
+			velX = Mathf.Lerp(velX, sideLerp, 0.1f);
+			velY = Mathf.Lerp(velY, forwardLerp, 0.1f);
+			anim.SetFloat("Forward", velY);
+			anim.SetFloat("Side", velX);
 		}
 		else
 		{
@@ -136,24 +159,70 @@ public class StormTrooper : MonoBehaviour
 			}
 
 			Vector3 clampedAngles;
-			spineT.localEulerAngles = spineT.localEulerAngles.WithX(Mathf.Clamp(x, -XClamp, XClamp)).WithY(Mathf.Clamp(y, -YClamp, YClamp));
+			spineT.localEulerAngles = spineT.localEulerAngles.WithX(Mathf.Clamp(x, -XClamp, XClamp)).WithY(Mathf.Clamp(y, -YClamp, YClamp)).WithZ(0);
 
 		}
+	}
+
+	public void StartCantinaRoutine()
+	{
+		StartCoroutine(CantinaRoutine());
+		trooperGO.SetActive(true);
+	}
+
+	IEnumerator CantinaRoutine()
+	{
+		isMoving = true;
+		agent.destination = targetCT.position;
+		yield return new WaitUntil(() => Vector3.Distance(transform.position, targetCT.position) < 1);
+
+		yield return TurnToPlayer();
+		StartCoroutine(ContinueAiming());
+		disarm.Play();
+		yield return new WaitForSeconds(disarm.clip.length);
+		yield return new WaitForSeconds(1);
+		standDown.Play();
+		yield return new WaitForSeconds(standDown.clip.length);
+
+	}
+
+	IEnumerator ContinueAiming()
+	{
+		yield return AimAtPlayer(1);
+		yield return AimAtPlayer(1);
+		yield return AimAtPlayer(1);
+		yield return AimAtPlayer(1);
+		yield return AimAtPlayer(1);
+		yield return AimAtPlayer(1);
+		yield return AimAtPlayer(1);
+		yield return AimAtPlayer(1);
+
+	}
+
+
+
+
+	public void StartFireScene()
+	{
+		StartCoroutine(MasterRoutine());
+		isMoving = true;
+		trooperGO.SetActive(true);
 	}
 
 
 	IEnumerator MasterRoutine()
 	{
-		while (true)
+		yield return new WaitForSeconds(Random.Range(0, 5));
+		while (!isDead)
 		{
 			yield return MoveToNextPoint();
-			yield return new WaitForSeconds(2);
+			yield return new WaitForSeconds(Random.Range(0,2));
 			yield return FireAtPlayerRoutine();
 			//yield return TurnToPlayer();
 			//yield return AimAtPlayer();
 			//yield return FireAtPlayerRoutine();
 			yield return ReturnSpine();
-			yield return new WaitForSeconds(2);
+			yield return new WaitForSeconds(Random.Range(0, 3));
 
 		}
 	}
@@ -181,39 +250,19 @@ public class StormTrooper : MonoBehaviour
 		}
 	}
 
-	IEnumerator AimAtPlayer(float aimTime = 0.25f)
-	{
-		Vector3 forward = gunPointT.forward;
-		Vector3 target = (PlayerBody() - transform.position).normalized;
-		Quaternion turnRot = Quaternion.FromToRotation(forward, target);
-
-		float lerpTime = aimTime;
-		float curTime = 0;
-		Quaternion startRot = spineT.rotation;
-
-		while (curTime < lerpTime)
-		{
-			yield return null;
-			curTime += Time.deltaTime;
-
-			spineRot = Quaternion.Slerp(startRot, startRot * turnRot, Mathf.SmoothStep(0,1,curTime / lerpTime));
-		}
-
-		yield return null;
-		yield return null;
-
-	}
+	
 
 	IEnumerator FireAtPlayerRoutine()
 	{
 		yield return TurnToPlayer();
 		yield return AimAtPlayer();
-		yield return FireRoutine(3);
+		yield return FireRoutine(Random.Range(2,3));
 
 	}
 
 	IEnumerator TurnToPlayer()
 	{
+		anim.SetLayerWeight(3, 1);
 		Vector3 forward = gunPointT.forward;
 		Vector3 target = (playerCamT.position - transform.position).normalized;
 		forward.y = target.y = 0;
@@ -229,8 +278,32 @@ public class StormTrooper : MonoBehaviour
 		s.Insert(turnTime -1, DOTween.To(() => anim.GetFloat("Turn"), x => anim.SetFloat("Turn", x), 0, 1));
 
 		yield return s.WaitForCompletion();
+		anim.SetLayerWeight(3, 0);
+
 	}
 
+	IEnumerator AimAtPlayer(float aimTime = 0.25f)
+	{
+		Vector3 forward = gunPointT.forward;
+		Vector3 target = (PlayerBody() - transform.position).normalized;
+		Quaternion turnRot = Quaternion.FromToRotation(forward, target);
+
+		float lerpTime = aimTime;
+		float curTime = 0;
+		Quaternion startRot = spineT.rotation;
+
+		while (curTime < lerpTime)
+		{
+			yield return null;
+			curTime += Time.deltaTime;
+
+			spineRot = Quaternion.Slerp(startRot, startRot * turnRot, Mathf.SmoothStep(0, 1, curTime / lerpTime));
+		}
+
+		yield return null;
+		yield return null;
+
+	}
 
 	IEnumerator ReturnSpine()
 	{
@@ -243,8 +316,12 @@ public class StormTrooper : MonoBehaviour
 			yield return null;
 			curTime += Time.deltaTime;
 
-			spineRot = Quaternion.Slerp(startRot, Quaternion.identity, curTime / lerpTime);
+			spineRot = Quaternion.Slerp(startRot, spineT.parent.rotation * startSpineLocalRot, curTime / lerpTime);
 		}
+		yield return null;
+		yield return null;
+
+		spineRot = null;
 	}
 
 
@@ -267,7 +344,7 @@ public class StormTrooper : MonoBehaviour
 
 	Vector3 PlayerBody()
 	{
-		return playerCamT.position + Vector3.down;
+		return playerCamT.position + Vector3.down * 0.5f;
 	}
 
 
@@ -321,7 +398,7 @@ public class StormTrooper : MonoBehaviour
 		}
 
 
-        source.Play();
+        damageSource.Play();
     }
 
 
@@ -338,6 +415,27 @@ public class StormTrooper : MonoBehaviour
 
 
 
+
+
+	IEnumerator WalkingRoutine()
+	{
+		yield return new WaitForSeconds(Random.Range(1, 10));
+		while(!isDead)
+		{
+			while (isMoving)
+			{
+				if (!walking.isPlaying)
+				{
+					walking.Play();
+					float speedLerp = Mathf.InverseLerp(0, 4, velocity.y);
+					float delay = Mathf.Lerp(2, 0, speedLerp);
+					yield return new WaitForSeconds(walking.clip.length + delay + Random.Range(0.1f, 0.5f));
+				}
+				yield return null;
+			}
+			yield return null;
+		}
+	}
 
 
 

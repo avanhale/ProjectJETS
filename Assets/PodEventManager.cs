@@ -88,12 +88,14 @@ public class PodEventManager : MonoBehaviour
 			AmbientLighter.instance.Dark();
 			dark1 = true;
 			cavesReverb.SetActive(true);
+			GameManager.instance.Bloom(false);
 		}
 
 		if (!light1 && podRacer.m_NormalizedT > lightTrigger1)
 		{
 			AmbientLighter.instance.Light();
 			light1 = true;
+			GameManager.instance.Bloom(true);
 		}
 
 
@@ -127,6 +129,7 @@ public class PodEventManager : MonoBehaviour
 	public void StartRacing()
 	{
 		StartCoroutine(RaceRoutine());
+		FindObjectOfType<Sandcrawler>().StartTrack();
 	}
 
 	IEnumerator RaceRoutine()

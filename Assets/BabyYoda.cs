@@ -20,7 +20,7 @@ public class BabyYoda : MonoBehaviour
         instance = this;
         interactableObject = GetComponent<VRTK_InteractableObject>();
         animator = GetComponentInChildren<Animator>();
-        Cooing();
+        
     }
 
     private void OnEnable()

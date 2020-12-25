@@ -37,7 +37,7 @@ public class WhistlingBird : MonoBehaviour
         source.Play();
         trail.enabled = true;
 
-        float flyTime = 1.75f;
+        float flyTime = 1.5f;
         float curTime = 0;
         while (curTime < flyTime)
 		{

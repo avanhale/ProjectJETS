@@ -15,14 +15,19 @@ public class Sandcrawler : MonoBehaviour
     public float lerpStartPodRacer;
 
     public Transform crawlerPointT;
+    public GameObject jawas;
 
 	private void Awake()
 	{
         anim = GetComponentInChildren<Animator>();
         walker = GetComponent<BezierWalkerWithSpeed>();
-        Close();
-
+        jawas.SetActive(false);
     }
+
+	private void OnEnable()
+	{
+        Close();
+	}
 
 	void Start()
     {
@@ -59,8 +64,9 @@ public class Sandcrawler : MonoBehaviour
             {
                 isTracking = false;
                 Open();
+                jawas.SetActive(true);
             }
-		}
+        }
 
 
 
@@ -93,6 +99,7 @@ public class Sandcrawler : MonoBehaviour
 		{
             player.transform.SetParent(transform);
             isParented = true;
+            moveSpeed = 5;
             //VRTKCustom_Haptics.instance.SandcrawlerPulse();
         }
 	}

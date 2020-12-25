@@ -16,7 +16,7 @@ public class flashing : MonoBehaviour
     void Update()
     {
         Color c = mat.color;
-        c.a = startA + Mathf.Sin(Time.time) * 0.05f;
+        c.a = .25f + Mathf.Sin(Time.time*2) * 0.125f;
         mat.color = c;
     }
 }

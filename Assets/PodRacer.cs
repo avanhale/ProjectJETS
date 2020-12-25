@@ -44,9 +44,8 @@ public class PodRacer : MonoBehaviour
     private void InteractableObject_InteractableObjectUsed(object sender, InteractableObjectEventArgs e)
 	{
         if (isMoving) return;
-        
-        EnterDriving();
-        PodEventManager.instance.StartRacing();
+
+        StartDriving();
 	}
 
 	void Start()
@@ -54,9 +53,8 @@ public class PodRacer : MonoBehaviour
         light01.SetActive(false);
         light02.SetActive(false);
         ActivateJets(false);
-        //EnterDriving();
-        //PodEventManager.instance.StartRacing();
-        //FindObjectOfType<Sandcrawler>().StartTrack();
+
+        //Invoke("StartDriving", 6);
     }
 
     void Update()
@@ -81,7 +79,25 @@ public class PodRacer : MonoBehaviour
         }
     }
 
-    [ContextMenu("EnterDriving")]
+
+    [ContextMenu("StartDriving")]
+    void StartDriving()
+	{
+        StartCoroutine(StartDrivingRoutine());
+	}
+
+    IEnumerator StartDrivingRoutine()
+	{
+        StartCoroutine(EnterDrivingSeatRoutine());
+        AudioManager_JT.instance.OST_Jawas();
+        yield return new WaitForSeconds(5);
+        PodEventManager.instance.StartRacing();
+        yield return new WaitForSeconds(1);
+        isMoving = true;
+    }
+
+
+
     public void EnterDriving()
 	{
         StartCoroutine(EnterDrivingSeatRoutine());
@@ -90,11 +106,16 @@ public class PodRacer : MonoBehaviour
     IEnumerator EnterDrivingSeatRoutine()
     {
         VRTK_HeadsetFade.instance.Fade(Color.black, 1);
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(6);
+
+        //transform.position = racerLine.GetPoint(0.02f);
+        //transform.rotation = Quaternion.LookRotation(racerLine.GetTangent(0.02f));
+        //yield return null;
+
         bodyPhysics.transform.SetParent(drivingSeatT, false);
         PlaySpaceRelativity.TransformCameraTo(drivingSeatT);
         bodyPhysics.enableBodyCollisions = false;
-        VRTK_HeadsetFade.instance.Unfade(1);
+        VRTK_HeadsetFade.instance.Unfade(3);
         GameManager.instance.mover.SetActive(false);
         ActivateJets();
         light01.SetActive(true);
@@ -110,7 +131,6 @@ public class PodRacer : MonoBehaviour
         interactableObject.isUsable = false;
         GetComponent<Collider>().enabled = false;
         JetPack.instance.canJets = false;
-        isMoving = true;
        // BabyYoda.instance.Fussing();
     }
 

@@ -17,6 +17,9 @@ TagManager:
   - LeftHand
   - PodRacer
   - Biker
+  - Helmet
+  - Rock
+  - Imp
   layers:
   - Default
   - TransparentFX

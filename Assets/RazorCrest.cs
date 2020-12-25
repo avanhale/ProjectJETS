@@ -7,27 +7,29 @@ using BezierSolution;
 
 public class RazorCrest : MonoBehaviour
 {
+    public static RazorCrest instance;
     public VRTK_ControllerEvents controller;
     public VRTK_ControllerEvents.ButtonAlias actionButton = VRTK_ControllerEvents.ButtonAlias.ButtonTwoPress;
     public int lift, turn, forward;
     public float liftForce, turnForce, forwardForce;
     Rigidbody body;
     VRTK_BodyPhysics bodyPhysics;
-    public Transform drivingSeatT;
+    public Transform drivingSeatT, babySeatT;
     public bool isDriving;
-
     BezierWalkerWithSpeed walker;
 
     public VRTK_ArtificialRotator controls_Lift, controls_Speed, controls_Turn;
     Animator anim;
 	private void Awake()
 	{
+        instance = this;
         body = GetComponent<Rigidbody>();
         bodyPhysics = FindObjectOfType<VRTK_BodyPhysics>();
         body.maxAngularVelocity = 100f;
         anim = GetComponentInChildren<Animator>();
         walker = GetComponent<BezierWalkerWithSpeed>();
-        Landing();
+        walker.enabled = false;
+        //Landing();
         //Driving();
     }
 
@@ -48,7 +50,7 @@ public class RazorCrest : MonoBehaviour
 
     private void Controller_JetPackButtonPressed(object sender, ControllerInteractionEventArgs e)
     {
-        EnterDrivingSeat();
+        //EnterDrivingSeat();
     }
 
     private void Controls_Lift_ValueChanged(object sender, VRTK.Controllables.ControllableEventArgs e)
@@ -64,7 +66,12 @@ public class RazorCrest : MonoBehaviour
         turn = ((int)e.value)-1;
     }
 
-    private void FixedUpdate()
+	private void Start()
+	{
+        SeatBaby();
+	}
+
+	private void FixedUpdate()
 	{
         if (isDriving)
         {
@@ -114,6 +121,13 @@ public class RazorCrest : MonoBehaviour
         else forward = 1;
     }
 
+
+    public void Starting()
+	{
+        walker.enabled = true;
+        Driving();
+    }
+
     [ContextMenu("Driving")]
     public void Driving()
 	{
@@ -147,10 +161,36 @@ public class RazorCrest : MonoBehaviour
         PlaySpaceRelativity.TransformCameraTo(drivingSeatT);
         bodyPhysics.enableBodyCollisions = false;
         VRTK_HeadsetFade.instance.Unfade(1);
-        FindObjectOfType<VRTK_SlideObjectControlAction>().gameObject.SetActive(false);
+        GameManager.instance.mover.gameObject.SetActive(false);
         Driving();
 
     }
+
+    public void ExitDrivingSeat()
+	{
+        StartCoroutine(ExitRoutine());
+	}
+
+    IEnumerator ExitRoutine()
+	{
+        bodyPhysics.transform.SetParent(null, false);
+        yield return null;
+        bodyPhysics.enableBodyCollisions = true;
+        GameManager.instance.mover.gameObject.SetActive(true);
+        Landing();
+    }
+
+
+
+    [ContextMenu("SeatBaby")]
+    public void SeatBaby()
+	{
+        BabyYoda.instance.transform.SetParent(babySeatT);
+        BabyYoda.instance.transform.localPosition = Vector3.zero;
+        BabyYoda.instance.transform.localEulerAngles = Vector3.zero;
+
+    }
+
 
 
 }
